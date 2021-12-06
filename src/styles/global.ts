@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -45,9 +45,11 @@ const GlobalStyles = createGlobalStyle`
     height: 100%;
   }
 
-  body {
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-  }
+  ${({ theme }) => css`
+    body {
+      font-family: ${theme.font.family};
+    }
+  `}
 `
 
 export default GlobalStyles

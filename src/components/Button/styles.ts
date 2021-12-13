@@ -23,29 +23,34 @@ const buttonModifiers = {
   fullWidth: () => css`
     width: 100%;
   `,
-  withIcon: () => css`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+  withIcon: (theme: DefaultTheme) => css`
     svg {
       width: 1.5rem;
       & + span {
-        margin-left: ${({ theme }) => theme.spacings.xxsmall};
+        margin-left: ${theme.spacings.xxsmall};
       }
     }
   `
 }
 
 export const Wrapper = styled.button<WrapperProps>`
-  ${({ theme, size = 'large', fullWidth, hasIcon }) => css`
+  ${({ theme, size = 'large', fullWidth = false, hasIcon }) => css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: ${theme.colors.white};
+    text-decoration: none;
     background: linear-gradient(
       178.59deg,
       #ff5f5f -14.51%,
       #f062c0 102.86%,
       #f23131 102.86%
     );
+
+    &:hover {
+      background: linear-gradient(180deg, #e35565 0%, #d958a6 50%);
+    }
+
     cursor: pointer;
     border-radius: ${theme.border.radius};
     border: 0;
@@ -53,6 +58,6 @@ export const Wrapper = styled.button<WrapperProps>`
 
     ${!!size && buttonModifiers[size](theme)}
     ${!!fullWidth && buttonModifiers.fullWidth()}
-    ${!!hasIcon && buttonModifiers.withIcon()}
+    ${!!hasIcon && buttonModifiers.withIcon(theme)}
   `}
 `

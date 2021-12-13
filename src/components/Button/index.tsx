@@ -1,12 +1,16 @@
+import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react'
 import * as S from './styles'
+
+type ButtonTypes =
+  | AnchorHTMLAttributes<HTMLAnchorElement>
+  | ButtonHTMLAttributes<HTMLButtonElement>
 
 export type ButtonProps = {
   size?: 'small' | 'medium' | 'large'
-  children?: React.ReactNode
   fullWidth?: boolean
   icon?: JSX.Element
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
-}
+  as?: React.ElementType
+} & ButtonTypes
 
 const Button = ({ children, icon, ...props }: ButtonProps) => (
   <S.Wrapper hasIcon={!!icon} {...props}>

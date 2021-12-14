@@ -35,7 +35,7 @@ const buttonModifiers = {
 
 export const Wrapper = styled.button<WrapperProps>`
   ${({ theme, size = 'large', fullWidth = false, hasIcon }) => css`
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     color: ${theme.colors.white};

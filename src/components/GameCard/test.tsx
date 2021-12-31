@@ -22,7 +22,6 @@ describe('<GameCard />', () => {
       screen.getByRole('heading', { name: props.developer })
     ).toBeInTheDocument()
     expect(screen.getByText(props.price)).toBeInTheDocument()
-    screen.debug()
     expect(screen.getByRole('img', { name: props.title })).toHaveAttribute(
       'alt',
       props.title

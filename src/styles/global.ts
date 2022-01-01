@@ -1,12 +1,29 @@
-import { createGlobalStyle, css } from 'styled-components'
+import {
+  createGlobalStyle,
+  css,
+  DefaultTheme,
+  GlobalStyleComponent
+} from 'styled-components'
 
-const GlobalStyles = createGlobalStyle`
+type GlobalStylesProps = {
+  removeBg?: boolean
+}
+
+const GlobalStyles: GlobalStyleComponent<
+  GlobalStylesProps,
+  DefaultTheme
+> = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    &::before,
+    &::after {
+      box-sizing: inherit;
+    }
   }
 
     /* poppins-300 - latin */
@@ -45,10 +62,11 @@ const GlobalStyles = createGlobalStyle`
     height: 100%;
   }
 
-  ${({ theme }) => css`
+  ${({ theme, removeBg }) => css`
     body {
       font-family: ${theme.font.family};
       font-size: ${theme.font.sizes.medium};
+      ${!removeBg && `background-color: ${theme.colors.mainBg};`}
     }
   `}
 `

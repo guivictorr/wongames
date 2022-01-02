@@ -1,17 +1,11 @@
 import { Story, Meta } from '@storybook/react'
 import Highlight, { HighlightProps } from '.'
+import args from './mock'
 
 export default {
   title: 'Highlight',
   component: Highlight,
-  args: {
-    title: 'Red dead redemption 2',
-    subtitle: 'Come see John’s new adventures',
-    buttonLabel: 'Buy now',
-    buttonLink: '/rdr2',
-    backgroundImage: '/img/red-dead-img.jpg',
-    floatImage: '/img/read-dead-float.jpg'
-  },
+  args,
   parameters: {
     layout: 'fullscreen'
   }

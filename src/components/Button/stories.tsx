@@ -31,3 +31,8 @@ Link.args = {
   size: 'large',
   href: '/link'
 }
+export const Minimal: Story<ButtonProps> = (args) => <Button {...args} />
+Minimal.args = {
+  ...Icon.args,
+  minimal: true
+}

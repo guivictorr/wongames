@@ -112,4 +112,19 @@ describe('<TextField />', () => {
     userEvent.tab()
     expect(screen.getByRole('textbox')).not.toHaveFocus()
   })
+
+  it('should render error message and change style', () => {
+    const { container } = renderWithTheme(
+      <TextField
+        disabled
+        labelFor="textfield"
+        label="Textfield"
+        id="textfield"
+        error="Error message"
+      />
+    )
+    expect(screen.getByText(/error message/i)).toBeInTheDocument()
+
+    expect(container.firstChild).toMatchSnapshot()
+  })
 })

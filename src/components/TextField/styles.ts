@@ -61,11 +61,27 @@ const wrapperModifiers = {
         color: currentColor;
       }
     }
+  `,
+  error: (theme: DefaultTheme) => css`
+    ${Label},
+    ${Icon} {
+      color: ${theme.colors.red};
+    }
+
+    ${InputWrapper} {
+      border-color: ${theme.colors.red};
+    }
   `
 }
 
-export const Wrapper = styled.div<Pick<TextFieldProps, 'disabled'>>`
-  ${({ theme, disabled }) => css`
+export const Wrapper = styled.div<Pick<TextFieldProps, 'disabled' | 'error'>>`
+  ${({ theme, disabled, error }) => css`
     ${disabled && wrapperModifiers.disabled(theme)}
+    ${!!error && wrapperModifiers.error(theme)}
+  `}
+`
+export const Error = styled.p`
+  ${({ theme }) => css`
+    color: ${theme.colors.red};
   `}
 `

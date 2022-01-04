@@ -40,3 +40,12 @@ export const Disabled: Story<TextFieldProps> = (args) => (
 Disabled.args = {
   disabled: true
 }
+export const WithError: Story<TextFieldProps> = (args) => (
+  <div style={{ maxWidth: 300, padding: 15 }}>
+    <TextField {...args} />
+  </div>
+)
+WithError.args = {
+  ...WithIcon.args,
+  error: 'Invalid email'
+}

@@ -75,4 +75,41 @@ describe('<TextField />', () => {
       'flex-direction': 'row-reverse'
     })
   })
+
+  it('should not change the value when is disabled', async () => {
+    const onInput = jest.fn()
+    renderWithTheme(
+      <TextField
+        onInput={onInput}
+        label="Label"
+        labelFor="textfield"
+        id="textfield"
+        disabled
+      />
+    )
+
+    const input = screen.getByRole('textbox')
+    const text = 'This text should be written'
+    userEvent.type(input, text)
+
+    await waitFor(() => {
+      expect(input).not.toHaveValue(text)
+    })
+
+    expect(onInput).not.toHaveBeenCalled()
+  })
+
+  it('should not be accessible by tab when is disabled', () => {
+    renderWithTheme(
+      <TextField
+        disabled
+        labelFor="textfield"
+        label="Textfield"
+        id="textfield"
+      />
+    )
+    expect(document.body).toHaveFocus()
+    userEvent.tab()
+    expect(screen.getByRole('textbox')).not.toHaveFocus()
+  })
 })

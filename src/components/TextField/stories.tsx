@@ -32,3 +32,11 @@ export const WithIcon: Story<TextFieldProps> = (args) => (
 WithIcon.args = {
   icon: <Message />
 }
+export const Disabled: Story<TextFieldProps> = (args) => (
+  <div style={{ maxWidth: 300, padding: 15 }}>
+    <TextField {...args} />
+  </div>
+)
+Disabled.args = {
+  disabled: true
+}

@@ -8,6 +8,7 @@ export type TextFieldProps = {
   icon?: JSX.Element
   initialValue?: string
   iconPosition?: 'left' | 'right'
+  disabled?: boolean
 } & InputHTMLAttributes<HTMLInputElement>
 
 const TextField = ({

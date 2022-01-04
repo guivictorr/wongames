@@ -1,8 +1,12 @@
 import styled, { css } from 'styled-components'
+import { TextFieldProps } from '.'
 
-export const InputWrapper = styled.div`
-  ${({ theme }) => css`
+type InputWrapperProps = Pick<TextFieldProps, 'iconPosition'>
+
+export const InputWrapper = styled.div<InputWrapperProps>`
+  ${({ theme, iconPosition = 'left' }) => css`
     display: flex;
+    flex-direction: ${iconPosition === 'right' && 'row-reverse'};
     background: ${theme.colors.lightGray};
     border-radius: 0.2rem;
     padding: 0 ${theme.spacings.xsmall};

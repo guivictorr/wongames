@@ -1,5 +1,6 @@
 import { screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { Message } from 'styled-icons/material-outlined'
 import { renderWithTheme } from 'utils/tests/helpers'
 
 import TextField from '.'
@@ -51,5 +52,17 @@ describe('<TextField />', () => {
     expect(document.body).toHaveFocus()
     userEvent.tab()
     expect(screen.getByRole('textbox')).toHaveFocus()
+  })
+
+  it('should render with icon', () => {
+    renderWithTheme(
+      <TextField
+        labelFor="textfield"
+        label="Textfield"
+        id="textfield"
+        icon={<Message data-testid="icon" />}
+      />
+    )
+    expect(screen.getByTestId('icon')).toBeInTheDocument()
   })
 })

@@ -49,7 +49,7 @@ export const Input = styled.input`
 type LabelProps = Pick<CheckboxProps, 'labelColor'>
 
 export const Label = styled.label<LabelProps>`
-  ${({ theme, labelColor = 'black' }) => css`
+  ${({ theme, labelColor = 'white' }) => css`
     cursor: pointer;
     padding-left: ${theme.spacings.xxsmall};
     color: ${theme.colors[labelColor]};

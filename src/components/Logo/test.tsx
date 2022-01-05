@@ -48,4 +48,10 @@ describe('<Logo />', () => {
       { media: '(max-width: 768px)' }
     )
   })
+
+  it('should render the logo with id', () => {
+    renderWithTheme(<Logo id="myId" />)
+
+    expect(document.querySelector('#myId')).toBeInTheDocument()
+  })
 })

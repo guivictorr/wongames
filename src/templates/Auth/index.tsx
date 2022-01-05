@@ -1,8 +1,33 @@
+import { ReactNode } from 'react'
+import Heading from 'components/Heading'
+import Logo from 'components/Logo'
 import * as S from './styles'
 
-const Auth = () => (
+type AuthProps = {
+  title: string
+  children: ReactNode
+}
+
+const Auth = ({ children, title }: AuthProps) => (
   <S.Wrapper>
-    <h1>Auth</h1>
+    <S.BannerBlock>
+      <Logo />
+      <Heading>All your favorite games in one place</Heading>
+      <S.Subtitle>
+        <strong>WON</strong> is the best and mos complete gaming platform
+      </S.Subtitle>
+
+      <S.Footer>Won Games 2020 Todos os Direitos Reservados</S.Footer>
+    </S.BannerBlock>
+
+    <S.Content>
+      <Logo color="black" size="large" />
+      <Heading line="left" lineColor="secondary" color="black">
+        {title}
+      </Heading>
+
+      {children}
+    </S.Content>
   </S.Wrapper>
 )
 

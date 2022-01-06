@@ -10,35 +10,40 @@ import Home from '.'
 
 const props = {
   banners: bannerMock,
-  newGames: [gamesMock[0]],
+  newGames: gamesMock,
   mostPopularHighlight: highlightMock,
-  mostPopularGames: [gamesMock[0]],
-  upcomingGames: [gamesMock[0]],
+  mostPopularGames: gamesMock,
+  upcomingGames: gamesMock,
   upcomingHighlight: highlightMock,
-  upcomingMoreGames: [gamesMock[0]],
-  freeGames: [gamesMock[0]],
+  upcomingMoreGames: gamesMock,
+  freeGames: gamesMock,
   freeHighlight: highlightMock
 }
+
+jest.mock('components/Menu', () => ({
+  __esModule: true,
+  default: () => <div data-testid="Menu mock" />
+}))
+jest.mock('components/Showcase', () => ({
+  __esModule: true,
+  default: () => <div data-testid="Showcase mock" />
+}))
+jest.mock('components/Footer', () => ({
+  __esModule: true,
+  default: () => <div data-testid="Footer mock" />
+}))
+jest.mock('components/BannerSlider', () => ({
+  __esModule: true,
+  default: () => <div data-testid="Banner mock" />
+}))
 
 describe('<Home />', () => {
   it('should render correctly', () => {
     renderWithTheme(<Home {...props} />)
 
-    expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument()
-
-    const columns = ['Contact', 'Follow us', 'Links', 'Location']
-
-    columns.forEach((name) => {
-      expect(screen.getByRole('heading', { name })).toBeInTheDocument()
-    })
-
-    const sections = ['News', 'Most popular', 'Upcoming', 'Free games']
-
-    sections.forEach((name) => {
-      expect(screen.getByRole('heading', { name })).toBeInTheDocument()
-    })
-    expect(screen.getAllByText(/defy death 1/i)).toHaveLength(1)
-    expect(screen.getAllByText(/population zero/i)).toHaveLength(5)
-    expect(screen.getAllByText(/red dead redemption 2/i)).toHaveLength(3)
+    expect(screen.getByTestId('Menu mock')).toBeInTheDocument()
+    expect(screen.getAllByTestId('Showcase mock')).toHaveLength(5)
+    expect(screen.getByTestId('Footer mock')).toBeInTheDocument()
+    expect(screen.getByTestId('Banner mock')).toBeInTheDocument()
   })
 })

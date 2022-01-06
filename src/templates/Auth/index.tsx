@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { ReactNode } from 'react'
 import Heading from 'components/Heading'
 import Logo from 'components/Logo'
@@ -12,7 +13,11 @@ const Auth = ({ children, title }: AuthProps) => (
   <S.Wrapper>
     <S.BannerBlock>
       <S.BannerContent>
-        <Logo id="banner-logo" />
+        <Link href="/">
+          <a>
+            <Logo id="banner-logo" />
+          </a>
+        </Link>
         <div>
           <Heading size="huge">All your favorite games in one place</Heading>
           <S.Subtitle>

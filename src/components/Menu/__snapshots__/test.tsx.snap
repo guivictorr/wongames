@@ -484,6 +484,7 @@ exports[`<Menu /> should render the menu 1`] = `
     >
       <a
         class="c12"
+        href="/sign-in"
       >
         <span>
           Sign In

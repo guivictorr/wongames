@@ -1,0 +1,665 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Showcase /> should render correctly 1`] = `
+.c23 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.c11 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #FAFAFA;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: linear-gradient( 178.59deg,#ff5f5f -14.51%,#f062c0 102.86%,#f23131 102.86% );
+  cursor: pointer;
+  border-radius: 0.4rem;
+  border: 0;
+  padding: 0.8rem;
+  height: 5rem;
+  font-size: 1.6rem;
+  padding: 0.8rem 4.8rem;
+}
+
+.c11:hover {
+  background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
+}
+
+.c27 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #FAFAFA;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: linear-gradient( 178.59deg,#ff5f5f -14.51%,#f062c0 102.86%,#f23131 102.86% );
+  cursor: pointer;
+  border-radius: 0.4rem;
+  border: 0;
+  padding: 0.8rem;
+  height: 3rem;
+  font-size: 1.2rem;
+}
+
+.c27:hover {
+  background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
+}
+
+.c27 svg {
+  width: 1.5rem;
+}
+
+.c27 svg + span {
+  margin-left: 0.8rem;
+}
+
+.c15 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #FAFAFA;
+}
+
+.c16 {
+  height: 14rem;
+  width: 100%;
+  background: #f6f7f8;
+  background-image: linear-gradient( to right,#f6f7f8 0%,#edeef1 20%,#f6f7f8 40%,#f6f7f8 100% );
+  background-size: 80rem 14rem;
+  -webkit-animation: placeholderShimmer 1s linear infinite forwards;
+  animation: placeholderShimmer 1s linear infinite forwards;
+}
+
+.c17 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  margin: 1.6rem;
+}
+
+.c19 {
+  max-width: calc(100% - 2.5rem);
+}
+
+.c20 {
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  font-weight: 600;
+  color: #030517;
+}
+
+.c21 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #8F8F8F;
+}
+
+.c22 {
+  color: #F231A5;
+  position: absolute;
+  right: 0;
+  top: -0.5rem;
+  cursor: pointer;
+}
+
+.c22 svg {
+  width: 2.5rem;
+}
+
+.c24 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  margin-top: 0.8rem;
+}
+
+.c25 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-weight: 600;
+  height: 3rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #8F8F8F;
+  -webkit-text-decoration: line-through;
+  text-decoration: line-through;
+  margin-right: 1.6rem;
+}
+
+.c26 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-weight: 600;
+  height: 3rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #FAFAFA;
+  padding: 0 0.8rem;
+  background-color: #3CD3C1;
+  border-radius: 0.4rem;
+  margin-right: calc(0.8rem / 2);
+}
+
+.c14 .slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.c14 .slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.c14 .slick-list:focus {
+  outline: none;
+}
+
+.c14 .slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.c14 .slick-slider .slick-track,
+.c14 .slick-slider .slick-list {
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.c14 .slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+.c14 .slick-track:before,
+.c14 .slick-track:after {
+  display: table;
+  content: '';
+}
+
+.c14 .slick-track:after {
+  clear: both;
+}
+
+.c14 .slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.c14 .slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+}
+
+.c14 [dir='rtl'] .slick-slide {
+  float: right;
+}
+
+.c14 .slick-slide img {
+  display: block;
+}
+
+.c14 .slick-slide.slick-loading img {
+  display: none;
+}
+
+.c14 .slick-slide.dragging img {
+  pointer-events: none;
+}
+
+.c14 .slick-initialized .slick-slide {
+  display: block;
+}
+
+.c14 .slick-loading .slick-slide {
+  visibility: hidden;
+}
+
+.c14 .slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.c14 .slick-arrow.slick-hidden {
+  display: none;
+}
+
+.c13 .slick-track,
+.c13 .slick-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c13 .slick-slide > div {
+  margin: 0 0.8rem;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  height: 100%;
+}
+
+.c13 .slick-list {
+  margin: 0 -0.8rem;
+}
+
+.c13 .slick-prev,
+.c13 .slick-next {
+  display: block;
+  color: #FAFAFA;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+.c13 .slick-prev {
+  left: -5.6rem;
+}
+
+.c13 .slick-next {
+  right: -5.6rem;
+}
+
+.c13 .slick-prev.slick-disabled,
+.c13 .slick-next.slick-disabled {
+  visibility: hidden;
+}
+
+.c3 {
+  color: #FAFAFA;
+  padding-left: 0.8rem;
+  border-left: 0.7rem solid #3CD3C1;
+  font-size: 1.8rem;
+}
+
+.c5 {
+  position: relative;
+  background-image: url(/img/red-dead-img.jpg);
+  background-size: cover;
+  background-position: center center;
+  height: 23rem;
+  display: grid;
+  grid-template-areas: 'floatimage content';
+  grid-template-columns: 1.3fr 2fr;
+}
+
+.c5::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.c5 .c7 {
+  text-align: right;
+}
+
+.c6 {
+  grid-area: floatimage;
+  z-index: 10;
+  max-height: 23rem;
+  max-width: 100%;
+  -webkit-align-self: end;
+  -ms-flex-item-align: end;
+  align-self: end;
+}
+
+.c8 {
+  grid-area: content;
+  z-index: 10;
+  padding: 1.6rem;
+}
+
+.c9 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #FAFAFA;
+}
+
+.c10 {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #FAFAFA;
+  margin-bottom: 3.2rem;
+}
+
+.c0 {
+  max-width: 130rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: calc(3.2rem / 2);
+  padding-right: calc(3.2rem / 2);
+}
+
+.c1 {
+  margin-bottom: calc(4.0rem * 2);
+}
+
+.c1 .c2,
+.c1 .c4,
+.c1 .c12 {
+  margin-bottom: 3.2rem;
+}
+
+@media (max-width:1440px) {
+  .c13 {
+    overflow-x: hidden;
+  }
+}
+
+@media (min-width:1170px) {
+  .c13 .slick-slide > div {
+    margin: 0 1.6rem;
+  }
+
+  .c13 .slick-list {
+    margin: 0 -1.6rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c3 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c5 {
+    height: 32rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c6 {
+    max-height: 32rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c8 {
+    -webkit-align-self: end;
+    -ms-flex-item-align: end;
+    align-self: end;
+    padding: 4.0rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c9 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c10 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width:768px) {
+  .c1 .c4 {
+    margin-right: calc(-3.2rem / 2);
+    margin-left: calc(-3.2rem / 2);
+  }
+}
+
+@media (max-width:1440px) {
+  .c1 .c12 {
+    margin-right: calc(-3.2rem / 2);
+  }
+}
+
+<section
+  class="c0 c1"
+>
+  <h2
+    class="c2 c3"
+  >
+    Heading
+  </h2>
+  <section
+    class="c4 c5"
+  >
+    <img
+      alt="Red dead redemption 2"
+      class="c6"
+      src="/img/red-dead-float.png"
+    />
+    <div
+      class="c7 c8"
+    >
+      <h2
+        class="c9"
+      >
+        Red dead redemption 2
+      </h2>
+      <h3
+        class="c10"
+      >
+        Come see John’s new adventures
+      </h3>
+      <a
+        class="c11"
+        href="/rdr2"
+      >
+        <span>
+          Buy now
+        </span>
+      </a>
+    </div>
+  </section>
+  <section
+    class="c12 c13"
+  >
+    <section
+      class="c14"
+    >
+      <div
+        class="slick-slider slick-initialized"
+      >
+        
+        <div
+          class="slick-list"
+        >
+          <div
+            class="slick-track"
+            style="opacity: 1; transform: translate3d(0px, 0px, 0px);"
+          >
+            <div
+              aria-hidden="false"
+              class="slick-slide slick-active slick-current"
+              data-index="0"
+              style="outline: none; width: 0px;"
+              tabindex="-1"
+            >
+              <div>
+                <article
+                  class="c15"
+                >
+                  <div
+                    class="c16"
+                  >
+                    <img
+                      alt="Population Zero"
+                      class="c17"
+                      src="https://source.unsplash.com/user/willianjusten/300x140"
+                    />
+                  </div>
+                  <div
+                    class="c18"
+                  >
+                    <div
+                      class="c19"
+                    >
+                      <h3
+                        class="c20"
+                      >
+                        Population Zero
+                      </h3>
+                      <h4
+                        class="c21"
+                      >
+                        Rockstar Games
+                      </h4>
+                    </div>
+                    <div
+                      class="c22"
+                      role="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        aria-label="Add to wishlist"
+                        class="c23"
+                        fill="currentColor"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 0h24v24H0V0z"
+                          fill="none"
+                        />
+                        <path
+                          d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="c24"
+                    >
+                      <div
+                        class="c25"
+                      >
+                        R$ 235,00
+                      </div>
+                      <div
+                        class="c26"
+                      >
+                        R$ 215,00
+                      </div>
+                      <button
+                        class="c27"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="c23"
+                          fill="currentColor"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M0 0h24v24H0V0z"
+                            fill="none"
+                          />
+                          <path
+                            d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-8.9-5h7.45c.75 0 1.41-.41 1.75-1.03l3.86-7.01L19.42 4l-3.87 7H8.53L4.27 2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+    </section>
+  </section>
+</section>
+`

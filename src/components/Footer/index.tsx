@@ -5,7 +5,7 @@ import * as S from './styles'
 
 const Footer = () => (
   <S.Wrapper>
-    <Logo color="black" />
+    <Logo color="black" id="footer-logo" />
     <S.Content>
       <S.Column>
         <Heading lineColor="secondary" size="small" color="black" line="bottom">

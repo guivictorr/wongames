@@ -13,7 +13,7 @@ export type TextFieldProps = {
 } & InputHTMLAttributes<HTMLInputElement>
 
 const TextField = ({
-  initialValue,
+  initialValue = '',
   label = '',
   labelFor = '',
   onInput,

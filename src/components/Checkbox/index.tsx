@@ -14,7 +14,7 @@ const Checkbox = ({
   label,
   labelFor = '',
   labelColor,
-  isChecked,
+  isChecked = false,
   ...rest
 }: CheckboxProps) => {
   const [checked, setChecked] = useState(isChecked)

@@ -1,5 +1,6 @@
 import { Story, Meta } from '@storybook/react'
 import GameDetails, { GameDetailsProps } from '.'
+import gameDetailsMock from './mock'
 
 export default {
   title: 'Data display/GameDetails',
@@ -8,7 +9,18 @@ export default {
     platforms: {
       control: {
         type: 'inline-check',
-        options: ['mac', 'windows', 'linux']
+        options: gameDetailsMock.platforms
+      }
+    },
+    genres: {
+      control: {
+        type: 'inline-check',
+        options: gameDetailsMock.genres
+      }
+    },
+    releaseDate: {
+      control: {
+        type: 'date'
       }
     }
   },
@@ -17,9 +29,7 @@ export default {
       default: 'dark'
     }
   },
-  args: {
-    platforms: ['mac', 'windows', 'linux']
-  }
+  args: gameDetailsMock
 } as Meta
 
 export const Default: Story<GameDetailsProps> = (args) => (

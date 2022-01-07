@@ -14,7 +14,7 @@ const props: GameDetailsProps = {
 
 describe('<GameDetails />', () => {
   it('should render the blocks', () => {
-    renderWithTheme(<GameDetails {...props} />)
+    const { container } = renderWithTheme(<GameDetails {...props} />)
     expect(
       screen.getByRole('heading', { name: /developer/i })
     ).toBeInTheDocument()
@@ -29,6 +29,7 @@ describe('<GameDetails />', () => {
       screen.getByRole('heading', { name: /publisher/i })
     ).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /rating/i })).toBeInTheDocument()
+    expect(container.firstChild).toMatchSnapshot()
   })
 
   it('should render platform icons', () => {

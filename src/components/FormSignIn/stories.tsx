@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react'
 import FormSignIn from '.'
 
 export default {
-  title: 'FormSignIn',
+  title: 'Form/FormSignIn',
   component: FormSignIn
 } as Meta
 

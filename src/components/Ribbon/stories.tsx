@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react'
 import Ribbon, { RibbonProps } from '.'
 
 export default {
-  title: 'Ribbon',
+  title: 'Data display/Ribbon',
   component: Ribbon,
   args: {
     children: 'Best Seller'

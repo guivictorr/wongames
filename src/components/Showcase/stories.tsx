@@ -4,7 +4,7 @@ import cardSliderMock from 'components/GameCardSlider/mock'
 import highlightMock from 'components/Highlight/mock'
 
 export default {
-  title: 'Showcase',
+  title: 'Data display/Showcase',
   component: Showcase,
   parameters: {
     backgrounds: {

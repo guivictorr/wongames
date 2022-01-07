@@ -4,7 +4,7 @@ import { Settings } from 'react-slick'
 import Slider, { SliderProps } from '.'
 
 export default {
-  title: 'Slider',
+  title: 'Utils/Slider',
   component: Slider
 } as Meta
 

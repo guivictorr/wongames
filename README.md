@@ -1,12 +1,15 @@
+<h1 align='center'>Won games 🎮</h1>
+<p align='center'>Wongames is a project developed during a course called Advanced React which we learn a lot about front-end concepts like, accessibility, unit tests, integration tests, creation of good components, etc. In this repo you can view all the code developed during the course.  </p>
 
-![React Avançado](https://raw.githubusercontent.com/React-Avancado/boilerplate/master/public/img/logo-gh.svg)
+## 💄 Layout
+- [Layout](https://www.figma.com/file/xwqB4b2hX8yPmp66vRuHLz/Won-Games---Em-Andamento!!?node-id=139%3A0)
 
-This is a [Next.js](https://nextjs.org/) boilerplate to be used in a course called [React Avançado](https://reactavancado.com.br/).
-![ci](https://github.com/React-Avancado/boilerplate/workflows/ci/badge.svg)
-## What is inside?
+## 🛠 Technologies
 
-This project uses lot of stuff as:
+This project was developed with the following technologies:
 
+Frontend
+- [GraphQL](https://graphql.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [NextJS](https://nextjs.org/)
 - [Styled Components](https://styled-components.com/)
@@ -16,20 +19,25 @@ This project uses lot of stuff as:
 - [Eslint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
 - [Husky](https://github.com/typicode/husky)
+- [Styled icons](https://styled-icons.dev/)
 
-## Getting Started
+## 📱💻 Instructions
 
-First, run the development server:
+```
+## 1. Clone repo
+git clone https://github.com/guivictorr/wongames.git
 
-```bash
-npm run dev
-# or
+## 2. Change to project folder
+cd nomedorepo
+
+## 3. Install dependencies
+yarn install
+
+## 4. Run the app
 yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
 ## Commands
 
@@ -42,17 +50,13 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 - `storybook`: runs storybook on `localhost:6006`
 - `build-storybook`: create the build version of storybook
 
-## Learn More
+## 🤔 How to contribute
 
-To learn more about Next.js, take a look at the following resources:
+- Fork this repository;
+- Create a branch with your feature: `git checkout -b my-feature`;
+- Commit your changes: `git commit -m 'feat: My new feature'`;
+- Push to your branch: `git push origin my-feature`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Once your pull request has been merged, you can delete your branch.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

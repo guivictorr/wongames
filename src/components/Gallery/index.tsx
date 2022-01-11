@@ -4,7 +4,7 @@ import { ArrowForwardIos as ArrowRight } from '@styled-icons/material-outlined/A
 import Slider from 'components/Slider'
 
 import * as S from './styles'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Close } from 'styled-icons/material-outlined'
 
 type GalleryImageProps = {
@@ -53,6 +53,16 @@ const settings: Settings = {
 
 const Gallery = ({ items, ...rest }: GalleryProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
+
+  useEffect(() => {
+    const handleKeyUp = ({ key }: KeyboardEvent) => {
+      key === 'Escape' && setIsModalOpen(false)
+    }
+
+    window.addEventListener('keyup', handleKeyUp)
+
+    return () => window.removeEventListener('keyup', handleKeyUp)
+  }, [])
 
   return (
     <S.Wrapper {...rest}>

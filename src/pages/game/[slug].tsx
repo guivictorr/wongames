@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Game, { GameTemplateProps } from 'templates/Game'
 import galleryMock from 'components/Gallery/mock'
+import textContentMock from 'components/TextContent/mock'
 
 function Index(props: GameTemplateProps) {
   return <Game {...props} />
@@ -24,7 +25,8 @@ export const getStaticProps: GetStaticProps<GameTemplateProps> = async () => {
         description:
           'Cyberpunk 2077 is an open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification. You play as V, a mercenary outlaw going after a one-of-a-kind implant that is the key to immortality'
       },
-      gallery: galleryMock
+      gallery: galleryMock,
+      description: textContentMock.content
     }
   }
 }

@@ -1,16 +1,23 @@
+import GameInfo, { GameInfoProps } from 'components/GameInfo'
 import Base from 'templates/Base'
 import * as S from './styles'
 
 export type GameTemplateProps = {
   cover: string
+  gameInfo: GameInfoProps
 }
 
-const Game = ({ cover }: GameTemplateProps) => (
-  <S.Wrapper>
+const Game = ({ cover, gameInfo }: GameTemplateProps) => (
+  <section>
     <Base>
       <S.Cover src={cover} role="image" aria-label="cover" />
+      <S.Main>
+        <S.SectionGameInfo>
+          <GameInfo {...gameInfo} />
+        </S.SectionGameInfo>
+      </S.Main>
     </Base>
-  </S.Wrapper>
+  </section>
 )
 
 export default Game

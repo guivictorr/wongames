@@ -8,7 +8,7 @@ type BaseProps = {
 }
 
 const Base = ({ children }: BaseProps) => (
-  <section>
+  <S.Wrapper>
     <Container>
       <Menu />
     </Container>
@@ -18,7 +18,7 @@ const Base = ({ children }: BaseProps) => (
         <Footer />
       </Container>
     </S.SectionFooter>
-  </section>
+  </S.Wrapper>
 )
 
 export default Base

@@ -7,7 +7,7 @@ import Slider from 'components/Slider'
 import * as S from './styles'
 import { Close } from 'styled-icons/material-outlined'
 
-type GalleryImageProps = {
+export type GalleryImageProps = {
   src: string
   label: string
 }

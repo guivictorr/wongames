@@ -31,7 +31,7 @@ const Game = ({
 }: GameTemplateProps) => (
   <section>
     <Base>
-      <S.Cover src={cover} role="image" aria-label="cover" />
+      <S.Cover src={cover} role="img" aria-label="cover" />
       <S.Main>
         <S.SectionGameInfo>
           <GameInfo {...gameInfo} />

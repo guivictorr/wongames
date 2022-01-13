@@ -1,8 +1,11 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Game, { GameTemplateProps } from 'templates/Game'
+
 import galleryMock from 'components/Gallery/mock'
 import textContentMock from 'components/TextContent/mock'
 import gameDetailsMock from 'components/GameDetails/mock'
+import gameCardMock from 'components/GameCardSlider/mock'
+import highlightMock from 'components/Highlight/mock'
 
 function Index(props: GameTemplateProps) {
   return <Game {...props} />
@@ -28,7 +31,10 @@ export const getStaticProps: GetStaticProps<GameTemplateProps> = async () => {
       },
       gallery: galleryMock,
       description: textContentMock.content,
-      details: gameDetailsMock
+      details: gameDetailsMock,
+      recommendedGames: gameCardMock,
+      upcomingGames: gameCardMock,
+      upcomingHighlight: highlightMock
     }
   }
 }

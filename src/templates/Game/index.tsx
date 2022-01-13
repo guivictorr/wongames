@@ -1,6 +1,9 @@
 import Gallery, { GalleryImageProps } from 'components/Gallery'
+import { GameCardProps } from 'components/GameCard'
 import GameDetails, { GameDetailsProps } from 'components/GameDetails'
 import GameInfo, { GameInfoProps } from 'components/GameInfo'
+import { HighlightProps } from 'components/Highlight'
+import Showcase from 'components/Showcase'
 import TextContent from 'components/TextContent'
 import Base from 'templates/Base'
 import * as S from './styles'
@@ -11,6 +14,9 @@ export type GameTemplateProps = {
   gallery?: GalleryImageProps[]
   description: string
   details: GameDetailsProps
+  upcomingGames: GameCardProps[]
+  upcomingHighlight: HighlightProps
+  recommendedGames: GameCardProps[]
 }
 
 const Game = ({
@@ -18,7 +24,10 @@ const Game = ({
   gameInfo,
   gallery,
   description,
-  details
+  details,
+  recommendedGames,
+  upcomingGames,
+  upcomingHighlight
 }: GameTemplateProps) => (
   <section>
     <Base>
@@ -36,6 +45,15 @@ const Game = ({
         <S.SectionGameDetails>
           <GameDetails {...details} />
         </S.SectionGameDetails>
+        <Showcase
+          highlight={upcomingHighlight}
+          gameCardSliderItems={upcomingGames}
+          heading="Upcoming"
+        />
+        <Showcase
+          gameCardSliderItems={recommendedGames}
+          heading="You may like these games"
+        />
       </S.Main>
     </Base>
   </section>

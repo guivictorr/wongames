@@ -423,7 +423,7 @@ exports[`<Menu /> should render the menu 1`] = `
     >
       <a
         class="c9 c10"
-        href="#"
+        href="/"
       >
         Home
       </a>
@@ -519,7 +519,7 @@ exports[`<Menu /> should render the menu 1`] = `
     >
       <a
         class="c9 c10"
-        href="#"
+        href="/"
       >
         Home
       </a>

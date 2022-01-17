@@ -11,6 +11,7 @@ function WishlistPage(props: WishlistTemplateProps) {
 export const getStaticProps: GetStaticProps = () => {
   return {
     props: {
+      games: gamesSliderMock,
       recommendedGames: highlightMock,
       recommendedHighlight: gamesSliderMock.slice(0, 5)
     }

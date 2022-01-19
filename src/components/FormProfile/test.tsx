@@ -5,7 +5,7 @@ import FormProfile from '.'
 
 describe('<FormProfile />', () => {
   it('should render the profile form', () => {
-    renderWithTheme(<FormProfile />)
+    const { container } = renderWithTheme(<FormProfile />)
 
     expect(
       screen.getByRole('heading', { name: /my profile/i })
@@ -17,5 +17,6 @@ describe('<FormProfile />', () => {
     expect(screen.getByPlaceholderText('New password')).toBeInTheDocument()
 
     expect(screen.getByRole('button', { name: /save/i })).toBeInTheDocument()
+    expect(container.firstChild).toMatchSnapshot()
   })
 })

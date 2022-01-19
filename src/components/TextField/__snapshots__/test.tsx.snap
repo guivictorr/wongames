@@ -59,6 +59,7 @@ exports[`<TextField /> should render error message and change style 1`] = `
       class="c4"
       disabled=""
       id="textfield"
+      name="textfield"
       type="text"
       value=""
     />

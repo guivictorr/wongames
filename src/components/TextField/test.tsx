@@ -7,14 +7,14 @@ import TextField from '.'
 
 describe('<TextField />', () => {
   it('should render with label', () => {
-    renderWithTheme(<TextField label="Label" labelFor="field" id="field" />)
+    renderWithTheme(<TextField label="Label" name="label" />)
 
     expect(screen.getByLabelText('Label')).toBeInTheDocument()
   })
 
   it('should render without label', () => {
     renderWithTheme(<TextField />)
-    expect(screen.queryByLabelText('Label')).not.toBeInTheDocument()
+    expect(screen.queryByLabelText('label')).not.toBeInTheDocument()
   })
 
   it('should render with placeholder', () => {
@@ -28,7 +28,7 @@ describe('<TextField />', () => {
       <TextField
         onInput={onInput}
         label="Label"
-        labelFor="textfield"
+        name="textfield"
         id="textfield"
       />
     )
@@ -47,7 +47,7 @@ describe('<TextField />', () => {
 
   it('should be accessible by tab', () => {
     renderWithTheme(
-      <TextField labelFor="textfield" label="Textfield" id="textfield" />
+      <TextField name="textfield" label="Textfield" id="textfield" />
     )
     expect(document.body).toHaveFocus()
     userEvent.tab()
@@ -57,7 +57,7 @@ describe('<TextField />', () => {
   it('should render with icon', () => {
     renderWithTheme(
       <TextField
-        labelFor="textfield"
+        name="textfield"
         label="Textfield"
         id="textfield"
         icon={<Message data-testid="icon" />}
@@ -82,7 +82,7 @@ describe('<TextField />', () => {
       <TextField
         onInput={onInput}
         label="Label"
-        labelFor="textfield"
+        name="textfield"
         id="textfield"
         disabled
       />
@@ -101,12 +101,7 @@ describe('<TextField />', () => {
 
   it('should not be accessible by tab when is disabled', () => {
     renderWithTheme(
-      <TextField
-        disabled
-        labelFor="textfield"
-        label="Textfield"
-        id="textfield"
-      />
+      <TextField disabled name="textfield" label="Textfield" id="textfield" />
     )
     expect(document.body).toHaveFocus()
     userEvent.tab()
@@ -117,7 +112,7 @@ describe('<TextField />', () => {
     const { container } = renderWithTheme(
       <TextField
         disabled
-        labelFor="textfield"
+        name="textfield"
         label="Textfield"
         id="textfield"
         error="Error message"

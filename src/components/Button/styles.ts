@@ -32,6 +32,11 @@ const buttonModifiers = {
       color: ${darken(0.1, theme.colors.primary)};
     }
   `,
+  disabled: () => css`
+    cursor: not-allowed;
+    filter: saturate(30%) l;
+  `,
+
   withIcon: (theme: DefaultTheme) => css`
     svg {
       width: 1.5rem;
@@ -48,7 +53,8 @@ export const Wrapper = styled.button<WrapperProps>`
     size = 'large',
     fullWidth = false,
     hasIcon,
-    minimal = false
+    minimal = false,
+    disabled
   }) => css`
     display: inline-flex;
     align-items: center;
@@ -77,5 +83,8 @@ export const Wrapper = styled.button<WrapperProps>`
     ${fullWidth && buttonModifiers.fullWidth()}
     ${!!hasIcon && buttonModifiers.withIcon(theme)}
     ${minimal && buttonModifiers.minimal(theme)}
+    &:disabled {
+      ${disabled && buttonModifiers.disabled()}
+    }
   `}
 `

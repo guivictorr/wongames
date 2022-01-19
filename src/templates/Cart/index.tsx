@@ -5,6 +5,7 @@ import { HighlightProps } from 'components/Highlight'
 import CartList, { CartListProps } from 'components/CartList'
 import PaymentOptions, { PaymentOptionsProps } from 'components/PaymentOptions'
 import Heading from 'components/Heading'
+import Empty from 'components/Empty'
 import Showcase from 'components/Showcase'
 import Base from 'templates/Base'
 
@@ -29,13 +30,22 @@ const Cart = ({
     <Base>
       <Container>
         <Heading line="left" lineColor="secondary">
-          My card
+          My cart
         </Heading>
 
-        <S.Content>
-          <CartList items={items} total={total} />
-          <PaymentOptions cards={cards} handlePayment={handlePayment} />
-        </S.Content>
+        {items.length ? (
+          <S.Content>
+            <CartList items={items} total={total} />
+
+            <PaymentOptions cards={cards} handlePayment={handlePayment} />
+          </S.Content>
+        ) : (
+          <Empty
+            title="Your cart is empty"
+            description="Go back to the store and explore great games and offers"
+            hasLink
+          />
+        )}
         <Divider />
       </Container>
 

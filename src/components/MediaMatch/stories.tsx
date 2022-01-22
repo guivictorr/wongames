@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react'
 import MediaMatch from '.'
 
 export default {
-  title: 'Utils/MediaMatch',
+  title: 'Structure/MediaMatch',
   component: MediaMatch
 } as Meta
 

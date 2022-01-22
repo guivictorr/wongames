@@ -4,7 +4,7 @@ import CartList, { CartListProps } from '.'
 import mockItems from './mock'
 
 export default {
-  title: 'CartList',
+  title: 'Payment/CartList',
   component: CartList,
   args: {
     items: mockItems,

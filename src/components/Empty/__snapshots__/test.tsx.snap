@@ -68,7 +68,7 @@ exports[`<Empty /> should render correctly 1`] = `
   <img
     alt="A game in a couch playing videogame"
     class="c1"
-    src="/img/empty.svg/"
+    src="/img/empty.svg"
   />
   <h2
     class="c2"

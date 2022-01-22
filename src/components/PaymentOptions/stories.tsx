@@ -10,9 +10,6 @@ export default {
     cards: cardsMock
   },
   argTypes: {
-    cards: {
-      type: ''
-    },
     handlePayment: {
       action: 'clicked'
     }

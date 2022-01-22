@@ -10,7 +10,7 @@ export default {
       type: 'string'
     },
     icon: {
-      type: ''
+      type: 'function'
     }
   }
 } as Meta

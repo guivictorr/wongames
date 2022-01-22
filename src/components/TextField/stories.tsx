@@ -12,8 +12,7 @@ export default {
     placeholder: 'john.cage@gmail.com'
   },
   argTypes: {
-    onInput: { action: 'changed' },
-    icon: { type: '' }
+    onInput: { action: 'changed' }
   }
 } as Meta
 

@@ -13,7 +13,7 @@ const FormProfile = () => (
       <TextField
         name="name"
         placeholder="Name"
-        label="name"
+        label="Name"
         initialValue="Wongames"
       />
       <TextField

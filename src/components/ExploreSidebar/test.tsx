@@ -1,4 +1,5 @@
 import { screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { renderWithTheme } from 'utils/tests/helpers'
 
 import ExploreSidebar from '.'
@@ -7,7 +8,7 @@ import itemsMock from './mock'
 
 describe('<ExploreSidebar />', () => {
   it('should render headings', () => {
-    renderWithTheme(<ExploreSidebar items={itemsMock} />)
+    renderWithTheme(<ExploreSidebar onFilter={jest.fn} items={itemsMock} />)
 
     expect(screen.getByRole('heading', { name: /price/i }))
     expect(screen.getByRole('heading', { name: /sort by/i }))
@@ -16,15 +17,84 @@ describe('<ExploreSidebar />', () => {
   })
 
   it('should render inputs', () => {
-    renderWithTheme(<ExploreSidebar items={itemsMock} />)
+    renderWithTheme(<ExploreSidebar onFilter={jest.fn} items={itemsMock} />)
 
     expect(screen.getByRole('checkbox', { name: /under \$50/i }))
     expect(screen.getByRole('radio', { name: /low to high/i }))
   })
 
   it('should render a filter button', () => {
-    renderWithTheme(<ExploreSidebar items={itemsMock} />)
+    renderWithTheme(<ExploreSidebar onFilter={jest.fn} items={itemsMock} />)
 
     expect(screen.getByRole('button', { name: /filter/i })).toBeInTheDocument()
+  })
+
+  it('should render with initial values ', () => {
+    renderWithTheme(
+      <ExploreSidebar
+        onFilter={jest.fn}
+        items={itemsMock}
+        initialValues={{
+          windows: true,
+          sort_by: 'low-to-high'
+        }}
+      />
+    )
+
+    expect(screen.getByLabelText(/windows/i)).toBeChecked()
+    expect(screen.getByLabelText(/low to high/i)).toBeChecked()
+  })
+
+  it('should filter with initial values', () => {
+    const onFilter = jest.fn()
+    renderWithTheme(
+      <ExploreSidebar
+        items={itemsMock}
+        initialValues={{
+          windows: true,
+          sort_by: 'low-to-high'
+        }}
+        onFilter={onFilter}
+      />
+    )
+
+    userEvent.click(screen.getByRole('button', { name: /filter/i }))
+
+    expect(onFilter).toHaveBeenCalledWith({
+      windows: true,
+      sort_by: 'low-to-high'
+    })
+  })
+
+  it('should filter with checked values', () => {
+    const onFilter = jest.fn()
+    renderWithTheme(<ExploreSidebar items={itemsMock} onFilter={onFilter} />)
+
+    userEvent.click(screen.getByLabelText(/windows/i))
+    userEvent.click(screen.getByLabelText(/low to high/i))
+
+    userEvent.click(screen.getByRole('button', { name: /filter/i }))
+
+    expect(onFilter).toHaveBeenCalledWith({
+      windows: true,
+      sort_by: 'low-to-high'
+    })
+
+    expect(screen.getByLabelText(/windows/i)).toBeChecked()
+    expect(screen.getByLabelText(/low to high/i)).toBeChecked()
+  })
+
+  it('should altern between radio options', () => {
+    const onFilter = jest.fn()
+    renderWithTheme(<ExploreSidebar items={itemsMock} onFilter={onFilter} />)
+
+    userEvent.click(screen.getByLabelText(/high to low/i))
+    userEvent.click(screen.getByLabelText(/low to high/i))
+
+    userEvent.click(screen.getByRole('button', { name: /filter/i }))
+
+    expect(onFilter).toHaveBeenCalledWith({
+      sort_by: 'low-to-high'
+    })
   })
 })

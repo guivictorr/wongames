@@ -8,7 +8,7 @@ import {
 import * as S from './styles'
 
 export type ProfileMenuProps = {
-  activeLink?: `/profile/${'me' | 'cards' | 'orders' | 'logout'}`
+  activeLink?: `/profile/${'me' | 'cards' | 'orders' | 'logout'}` | string
 }
 
 const ProfileMenu = ({ activeLink }: ProfileMenuProps) => (

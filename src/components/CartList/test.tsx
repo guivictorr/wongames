@@ -20,4 +20,9 @@ describe('<CartList />', () => {
     renderWithTheme(<CartList items={mockItems} total="R$ 330,00" hasButton />)
     expect(screen.getByRole('link', { name: 'Buy now' })).toBeInTheDocument()
   })
+
+  it('should render empty cart', () => {
+    renderWithTheme(<CartList />)
+    expect(screen.getByText(/your cart is empty/i)).toBeInTheDocument()
+  })
 })

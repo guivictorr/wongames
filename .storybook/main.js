@@ -1,6 +1,7 @@
 module.exports = {
   stories: ['../src/components/**/stories.tsx'],
   addons: ['@storybook/addon-essentials', 'storybook-addon-next-router'],
+  staticDirs: ['../public'],
   babel: async (options) => ({
     ...options,
     plugins: [

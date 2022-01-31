@@ -54,7 +54,7 @@ const Menu = ({ username }: MenuProps) => {
           </MediaMatch>
 
           <MediaMatch greaterThan="medium">
-            <CartDropdown aria-label="open-shopping-cart" />
+            <CartDropdown />
           </MediaMatch>
         </S.IconWrapper>
         <MediaMatch greaterThan="medium">

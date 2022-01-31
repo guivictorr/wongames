@@ -10,7 +10,7 @@ type BaseProps = {
 const Base = ({ children }: BaseProps) => (
   <S.Wrapper>
     <Container>
-      <Menu />
+      <Menu username="John" />
     </Container>
     <S.Content>{children}</S.Content>
     <S.SectionFooter>

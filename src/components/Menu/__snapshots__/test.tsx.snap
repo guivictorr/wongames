@@ -7,7 +7,7 @@ exports[`<Menu /> should render the menu 1`] = `
   overflow: hidden;
 }
 
-.c12 {
+.c13 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -33,11 +33,11 @@ exports[`<Menu /> should render the menu 1`] = `
   padding: 0.8rem 3.2rem;
 }
 
-.c12:hover {
+.c13:hover {
   background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
 }
 
-.c16 {
+.c17 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -64,7 +64,7 @@ exports[`<Menu /> should render the menu 1`] = `
   width: 100%;
 }
 
-.c16:hover {
+.c17:hover {
   background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
 }
 
@@ -138,7 +138,7 @@ exports[`<Menu /> should render the menu 1`] = `
   animation: hoverAnimation 0.2s forwards;
 }
 
-.c13 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -165,7 +165,7 @@ exports[`<Menu /> should render the menu 1`] = `
   pointer-events: none;
 }
 
-.c13 > svg {
+.c14 > svg {
   position: absolute;
   top: 0;
   right: 0;
@@ -175,7 +175,7 @@ exports[`<Menu /> should render the menu 1`] = `
   height: 2.4rem;
 }
 
-.c13 .c7 {
+.c14 .c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -196,7 +196,7 @@ exports[`<Menu /> should render the menu 1`] = `
   flex-direction: column;
 }
 
-.c13 .c9 {
+.c14 .c9 {
   color: #030517;
   font-weight: 600;
   font-size: 2.0rem;
@@ -209,7 +209,7 @@ exports[`<Menu /> should render the menu 1`] = `
   transition: transform 0.3s ease-in-out;
 }
 
-.c13 .c14 {
+.c14 .c15 {
   -webkit-transform: translateY(3rem);
   -ms-transform: translateY(3rem);
   transform: translateY(3rem);
@@ -218,7 +218,7 @@ exports[`<Menu /> should render the menu 1`] = `
   transition: transform 0.3s ease-in-out;
 }
 
-.c15 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -233,13 +233,13 @@ exports[`<Menu /> should render the menu 1`] = `
   padding: 0 4.8rem 4.8rem;
 }
 
-.c15 > span {
+.c16 > span {
   display: block;
   margin: 0.8rem 0;
   font-size: 1.2rem;
 }
 
-.c17 {
+.c18 {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #F231A5;
@@ -252,6 +252,13 @@ exports[`<Menu /> should render the menu 1`] = `
 
 .c6 {
   display: none;
+}
+
+.c12 {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #FAFAFA;
+  position: relative;
 }
 
 @media (max-width:768px) {
@@ -429,7 +436,7 @@ exports[`<Menu /> should render the menu 1`] = `
       </a>
       <a
         class="c9 c10"
-        href="#"
+        href="/games"
       >
         Explore
       </a>
@@ -462,29 +469,50 @@ exports[`<Menu /> should render the menu 1`] = `
     <div
       class="c2"
     >
-      <svg
-        aria-hidden="true"
-        aria-label="Open shopping cart"
-        class="c3"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="c1"
       >
-        <path
-          d="M0 0h24v24H0V0z"
-          fill="none"
-        />
-        <path
-          d="M15.55 13c.75 0 1.41-.41 1.75-1.03l3.58-6.49A.996.996 0 0020.01 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2h7.45zM6.16 6h12.15l-2.76 5H8.53L6.16 6zM7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
-        />
-      </svg>
+        <a
+          href="/cart"
+        >
+          <div
+            class="c12"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Shopping cart"
+              class="c3"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M15.55 13c.75 0 1.41-.41 1.75-1.03l3.58-6.49A.996.996 0 0020.01 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2h7.45zM6.16 6h12.15l-2.76 5H8.53L6.16 6zM7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
+              />
+            </svg>
+          </div>
+        </a>
+      </div>
+      <div
+        class="c6"
+      >
+        <div
+          data-testid="CartDropdown Mock"
+        >
+          CartDropdown Mock
+        </div>
+      </div>
     </div>
     <div
       class="c6"
     >
       <a
-        class="c12"
+        class="c13"
         href="/sign-in"
       >
         <span>
@@ -495,7 +523,7 @@ exports[`<Menu /> should render the menu 1`] = `
   </div>
   <nav
     aria-hidden="true"
-    class="c13"
+    class="c14"
   >
     <svg
       aria-hidden="true"
@@ -525,16 +553,16 @@ exports[`<Menu /> should render the menu 1`] = `
       </a>
       <a
         class="c9 c10"
-        href="#"
+        href="/games"
       >
         Explore
       </a>
     </div>
     <div
-      class="c14 c15"
+      class="c15 c16"
     >
       <button
-        class="c16"
+        class="c17"
       >
         <span>
           Log in now
@@ -544,7 +572,7 @@ exports[`<Menu /> should render the menu 1`] = `
         or
       </span>
       <a
-        class="c17"
+        class="c18"
         href="#"
         title="Sign Up"
       >

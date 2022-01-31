@@ -3,11 +3,18 @@ import Menu, { MenuProps } from '.'
 
 export default {
   title: 'Structure/Menu',
-  component: Menu
-} as Meta
+  component: Menu,
+  parameters: {
+    layout: 'fullscreen',
+    backgrounds: {
+      default: 'dark'
+    }
+  }
+} as Meta<MenuProps>
 
 export const Default: Story<MenuProps> = (args) => <Menu {...args} />
-Default.parameters = {
-  layout: 'fullscreen',
-  backgrounds: { default: 'dark' }
+
+export const Logged: Story<MenuProps> = (args) => <Menu {...args} />
+Logged.args = {
+  username: 'John'
 }

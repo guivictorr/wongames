@@ -1,6 +1,5 @@
 import { GetStaticProps } from 'next'
 
-import highlightMock from 'components/Highlight/mock'
 import gamesSliderMock from 'components/GameCardSlider/mock'
 import Wishlist, { WishlistTemplateProps } from 'templates/Wishlist'
 
@@ -12,7 +11,7 @@ export const getStaticProps: GetStaticProps = () => {
   return {
     props: {
       games: gamesSliderMock,
-      recommendedGames: highlightMock,
+      recommendedGames: gamesSliderMock,
       recommendedHighlight: gamesSliderMock.slice(0, 5)
     }
   }

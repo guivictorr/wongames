@@ -8,7 +8,8 @@ const props = {
   title: 'Super Mario Odyssey',
   developer: 'Nintendo',
   img: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-  price: 'R$ 50,00'
+  price: 'R$ 50,00',
+  slug: 'super-mario-odyssey'
 }
 
 describe('<GameCard />', () => {
@@ -26,7 +27,10 @@ describe('<GameCard />', () => {
       'alt',
       props.title
     )
-
+    expect(screen.getByRole('link', { name: props.title })).toHaveAttribute(
+      'href',
+      `/game/${props.slug}`
+    )
     expect(screen.getByLabelText(/add to wishlist/i)).toBeInTheDocument()
     expect(container.firstChild).toMatchSnapshot()
   })

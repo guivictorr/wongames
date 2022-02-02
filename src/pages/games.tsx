@@ -27,7 +27,8 @@ export const getStaticProps: GetStaticProps<GamesProps> = async () => {
           style: 'currency',
           currency: 'USD'
         }).format(game.price),
-        developer: game.developers[0].name
+        developer: game.developers[0].name,
+        slug: game.slug
       })),
       filterItems: filterItemsMock
     }

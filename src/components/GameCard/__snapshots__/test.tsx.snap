@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<GameCard /> should render correctly 1`] = `
+.c8 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
 .c11 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -36,12 +42,6 @@ exports[`<GameCard /> should render correctly 1`] = `
 
 .c11 svg + span {
   margin-left: 0.8rem;
-}
-
-.c8 {
-  display: inline-block;
-  vertical-align: middle;
-  overflow: hidden;
 }
 
 .c0 {
@@ -91,6 +91,8 @@ exports[`<GameCard /> should render correctly 1`] = `
 }
 
 .c4 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
   max-width: calc(100% - 2.5rem);
 }
 
@@ -156,20 +158,22 @@ exports[`<GameCard /> should render correctly 1`] = `
 <article
   class="c0"
 >
-  <div
+  <a
     class="c1"
+    href="/game/super-mario-odyssey"
   >
     <img
       alt="Super Mario Odyssey"
       class="c2"
       src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
     />
-  </div>
+  </a>
   <div
     class="c3"
   >
-    <div
+    <a
       class="c4"
+      href="/game/super-mario-odyssey"
     >
       <h3
         class="c5"
@@ -181,7 +185,7 @@ exports[`<GameCard /> should render correctly 1`] = `
       >
         Nintendo
       </h4>
-    </div>
+    </a>
     <div
       class="c7"
       role="button"

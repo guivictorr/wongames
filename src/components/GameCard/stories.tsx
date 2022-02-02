@@ -12,7 +12,8 @@ export default {
     title: 'Super Mario Odyssey',
     developer: 'Nintendo',
     img: 'https://source.unsplash.com/random',
-    price: 'R$ 50,00'
+    price: 'R$ 50,00',
+    slug: 'super-mario-odyssey'
   },
   parameters: {
     backgrounds: {

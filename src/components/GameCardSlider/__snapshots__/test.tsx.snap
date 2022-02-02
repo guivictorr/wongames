@@ -91,6 +91,8 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
 }
 
 .c7 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
   max-width: calc(100% - 2.5rem);
 }
 
@@ -390,20 +392,22 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
               <article
                 class="c3"
               >
-                <div
+                <a
                   class="c4"
+                  href="/game/undefined"
                 >
                   <img
                     alt="Population Zero"
                     class="c5"
                     src="https://source.unsplash.com/user/willianjusten/300x140"
                   />
-                </div>
+                </a>
                 <div
                   class="c6"
                 >
-                  <div
+                  <a
                     class="c7"
+                    href="/game/undefined"
                   >
                     <h3
                       class="c8"
@@ -415,7 +419,7 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
                     >
                       Rockstar Games
                     </h4>
-                  </div>
+                  </a>
                   <div
                     class="c10"
                     role="button"
@@ -487,20 +491,22 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
               <article
                 class="c3"
               >
-                <div
+                <a
                   class="c4"
+                  href="/game/undefined"
                 >
                   <img
                     alt="Population Zero"
                     class="c5"
                     src="https://source.unsplash.com/user/willianjusten/300x141"
                   />
-                </div>
+                </a>
                 <div
                   class="c6"
                 >
-                  <div
+                  <a
                     class="c7"
+                    href="/game/undefined"
                   >
                     <h3
                       class="c8"
@@ -512,7 +518,7 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
                     >
                       Rockstar Games
                     </h4>
-                  </div>
+                  </a>
                   <div
                     class="c10"
                     role="button"
@@ -584,20 +590,22 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
               <article
                 class="c3"
               >
-                <div
+                <a
                   class="c4"
+                  href="/game/undefined"
                 >
                   <img
                     alt="Population Zero"
                     class="c5"
                     src="https://source.unsplash.com/user/willianjusten/300x142"
                   />
-                </div>
+                </a>
                 <div
                   class="c6"
                 >
-                  <div
+                  <a
                     class="c7"
+                    href="/game/undefined"
                   >
                     <h3
                       class="c8"
@@ -609,7 +617,7 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
                     >
                       Rockstar Games
                     </h4>
-                  </div>
+                  </a>
                   <div
                     class="c10"
                     role="button"
@@ -681,20 +689,22 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
               <article
                 class="c3"
               >
-                <div
+                <a
                   class="c4"
+                  href="/game/undefined"
                 >
                   <img
                     alt="Population Zero"
                     class="c5"
                     src="https://source.unsplash.com/user/willianjusten/300x143"
                   />
-                </div>
+                </a>
                 <div
                   class="c6"
                 >
-                  <div
+                  <a
                     class="c7"
+                    href="/game/undefined"
                   >
                     <h3
                       class="c8"
@@ -706,7 +716,7 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
                     >
                       Rockstar Games
                     </h4>
-                  </div>
+                  </a>
                   <div
                     class="c10"
                     role="button"

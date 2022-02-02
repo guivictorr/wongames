@@ -5,8 +5,12 @@ module.exports = {
   collectCoverageFrom: [
     'src/**/*.ts(x)?',
     '!src/**/stories.tsx',
+    '!src/components/**/mock.ts',
+    '!src/graphql/**/*.ts',
     '!src/pages/**/*.tsx',
-    '!src/styles/**/*.ts'
+    '!src/styles/**/*.ts',
+    '!src/api/apollo.ts',
+    '!src/types/**.ts'
   ],
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
   modulePaths: ['<rootDir>/src/', '<rootDir>/.jest/']

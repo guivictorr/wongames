@@ -1,40 +1,80 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import Game, { GameTemplateProps } from 'templates/Game'
+import { QUERY_GAMES, QUERY_GAMES_BY_SLUG } from 'graphql/queries/games'
+import { QueryGames, QueryGamesVariables } from 'graphql/generated/QueryGames'
+import { initializeApollo } from 'api/apollo'
 
-import galleryMock from 'components/Gallery/mock'
-import textContentMock from 'components/TextContent/mock'
-import gameDetailsMock from 'components/GameDetails/mock'
+import Game, { GameTemplateProps } from 'templates/Game'
 import gameCardMock from 'components/GameCardSlider/mock'
 import highlightMock from 'components/Highlight/mock'
+import {
+  QueryGamesBySlug,
+  QueryGamesBySlugVariables
+} from 'graphql/generated/QueryGamesBySlug'
+import { formatNumber } from 'utils/format'
+
+const apolloClient = initializeApollo()
 
 function Index(props: GameTemplateProps) {
   return <Game {...props} />
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: [{ params: { slug: 'cyberpunk-2077' } }],
-    fallback: false
-  }
+  const { data } = await apolloClient.query<QueryGames, QueryGamesVariables>({
+    query: QUERY_GAMES,
+    variables: { limit: 9 }
+  })
+
+  const paths = data.games.map(({ slug }) => ({ params: { slug } }))
+
+  return { paths, fallback: true }
 }
 
-export const getStaticProps: GetStaticProps<GameTemplateProps> = async () => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const { data } = await apolloClient.query<
+    QueryGamesBySlug,
+    QueryGamesBySlugVariables
+  >({
+    query: QUERY_GAMES_BY_SLUG,
+    variables: { slug: `${params?.slug}` }
+  })
+
+  if (!data.games.length) {
+    return {
+      notFound: true,
+      props: {},
+      redirect: {
+        destination: '/'
+      }
+    }
+  }
+
+  const game = data.games[0]
+
   return {
+    revalidate: 60,
     props: {
-      cover:
-        'https://images.gog-statics.com/5643a7c831df452d29005caeca24c28cdbfaa6fbea5a9556b147ee26d325fa70_bg_crop_1366x655.jpg',
+      cover: `http://localhost:1337${game.cover?.src}`,
+      description: game.description,
       gameInfo: {
-        title: 'Cyberpunk 2077',
-        price: '59.00',
-        description:
-          'Cyberpunk 2077 is an open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification. You play as V, a mercenary outlaw going after a one-of-a-kind implant that is the key to immortality'
+        title: game.name,
+        price: formatNumber(game.price, { style: 'currency', currency: 'USD' }),
+        description: game.short_description
       },
-      gallery: galleryMock,
-      description: textContentMock.content,
-      details: gameDetailsMock,
-      recommendedGames: gameCardMock,
+      gallery: game.gallery.map((image) => ({
+        ...image,
+        src: `http://localhost:1337${image.src}`
+      })),
+      details: {
+        developer: game.developers[0].name,
+        releaseDate: game.release_date,
+        platforms: game.platforms.map((platform) => platform.name),
+        publisher: game.publisher?.name,
+        genres: game.categories.map((genre) => genre.name),
+        rating: game.rating
+      },
       upcomingGames: gameCardMock,
-      upcomingHighlight: highlightMock
+      upcomingHighlight: highlightMock,
+      recommendedGames: gameCardMock
     }
   }
 }

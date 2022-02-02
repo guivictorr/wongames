@@ -2,12 +2,13 @@ import Button from 'components/Button'
 import Heading from 'components/Heading'
 import Ribbon from 'components/Ribbon'
 import { AddShoppingCart, FavoriteBorder } from 'styled-icons/material-outlined'
+import { formatNumber } from 'utils/format'
 import * as S from './styles'
 
 export type GameInfoProps = {
   title: string
   description: string
-  price: string
+  price: number
 }
 
 const GameInfo = ({ title, description, price }: GameInfoProps) => (
@@ -16,7 +17,9 @@ const GameInfo = ({ title, description, price }: GameInfoProps) => (
       {title}
     </Heading>
 
-    <Ribbon color="secondary">{`$${price}`}</Ribbon>
+    <Ribbon color="secondary">
+      {formatNumber(price, { style: 'currency', currency: 'USD' })}
+    </Ribbon>
 
     <S.Description>{description}</S.Description>
 

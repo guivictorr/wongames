@@ -5,6 +5,7 @@ import filterItemsMock from 'components/ExploreSidebar/mock'
 import { initializeApollo } from 'api/apollo'
 import { QUERY_GAMES } from 'graphql/queries/games'
 import { QueryGames, QueryGamesVariables } from 'graphql/generated/QueryGames'
+import { formatNumber } from 'utils/format'
 
 function GamesPage(props: GamesProps) {
   return <Games {...props} />
@@ -23,10 +24,7 @@ export const getStaticProps: GetStaticProps<GamesProps> = async () => {
       games: data.games.map((game) => ({
         title: game.name,
         img: `http://localhost:1337${game.cover?.url}`,
-        price: new Intl.NumberFormat('en-US', {
-          style: 'currency',
-          currency: 'USD'
-        }).format(game.price),
+        price: formatNumber(game.price, { style: 'currency', currency: 'USD' }),
         developer: game.developers[0].name,
         slug: game.slug
       })),

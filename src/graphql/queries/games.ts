@@ -17,7 +17,7 @@ export const QUERY_GAMES = gql`
 `
 
 export const QUERY_GAMES_BY_SLUG = gql`
-  query GetGameBySlug($slug: String!) {
+  query QueryGamesBySlug($slug: String!) {
     games(where: { slug: $slug }) {
       name
       short_description

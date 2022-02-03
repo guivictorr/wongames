@@ -49,6 +49,7 @@ export const Content = styled.div`
     justify-content: space-between;
     position: relative;
     margin: ${theme.spacings.xsmall};
+    flex: 1;
   `}
 `
 

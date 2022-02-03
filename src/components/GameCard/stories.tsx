@@ -12,7 +12,7 @@ export default {
     title: 'Super Mario Odyssey',
     developer: 'Nintendo',
     img: 'https://source.unsplash.com/random',
-    price: 'R$ 50,00',
+    price: 50.0,
     slug: 'super-mario-odyssey'
   },
   parameters: {
@@ -33,7 +33,7 @@ export const Promotional: Story<GameCardProps> = (args) => (
   </div>
 )
 Promotional.args = {
-  promotionalPrice: 'R$ 25,00'
+  promotionalPrice: 25.0
 }
 
 export const WithRibbon: Story<GameCardProps> = (args) => (

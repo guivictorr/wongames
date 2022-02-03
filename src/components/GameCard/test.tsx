@@ -8,7 +8,7 @@ const props = {
   title: 'Super Mario Odyssey',
   developer: 'Nintendo',
   img: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-  price: 'R$ 50,00',
+  price: 50,
   slug: 'super-mario-odyssey'
 }
 
@@ -22,7 +22,7 @@ describe('<GameCard />', () => {
     expect(
       screen.getByRole('heading', { name: props.developer })
     ).toBeInTheDocument()
-    expect(screen.getByText(props.price)).toBeInTheDocument()
+    expect(screen.getByText(/\$50.00/i)).toBeInTheDocument()
     expect(screen.getByRole('img', { name: props.title })).toHaveAttribute(
       'alt',
       props.title
@@ -37,19 +37,19 @@ describe('<GameCard />', () => {
 
   it('should render price in label', () => {
     renderWithTheme(<GameCard {...props} />)
-    const price = screen.getByText('R$ 50,00')
+    const price = screen.getByText('$50.00')
 
     expect(price).not.toHaveStyle({ textDecoration: 'line-through' })
     expect(price).toHaveStyle({ backgroundColor: theme.colors.secondary })
   })
 
   it('should render promotional price', () => {
-    renderWithTheme(<GameCard {...props} promotionalPrice="R$ 25,00" />)
+    renderWithTheme(<GameCard {...props} promotionalPrice={25} />)
 
-    expect(screen.getByText('R$ 50,00')).toHaveStyle({
+    expect(screen.getByText('$50.00')).toHaveStyle({
       textDecoration: 'line-through'
     })
-    expect(screen.getByText('R$ 25,00')).not.toHaveStyle({
+    expect(screen.getByText('$25.00')).not.toHaveStyle({
       textDecoration: 'line-through'
     })
   })

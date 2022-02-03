@@ -88,6 +88,9 @@ exports[`<GameCard /> should render correctly 1`] = `
   justify-content: space-between;
   position: relative;
   margin: 1.6rem;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c4 {
@@ -214,7 +217,7 @@ exports[`<GameCard /> should render correctly 1`] = `
       <div
         class="c10"
       >
-        R$ 50,00
+        $50.00
       </div>
       <button
         class="c11"

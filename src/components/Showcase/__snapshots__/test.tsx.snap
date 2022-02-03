@@ -118,6 +118,9 @@ exports[`<Showcase /> should render correctly 1`] = `
   justify-content: space-between;
   position: relative;
   margin: 1.6rem;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c19 {
@@ -627,12 +630,12 @@ exports[`<Showcase /> should render correctly 1`] = `
                       <div
                         class="c25"
                       >
-                        R$ 235,00
+                        $235.00
                       </div>
                       <div
                         class="c26"
                       >
-                        R$ 215,00
+                        $215.00
                       </div>
                       <button
                         class="c27"

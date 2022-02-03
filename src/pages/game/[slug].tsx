@@ -10,7 +10,6 @@ import {
   QueryGamesBySlug,
   QueryGamesBySlugVariables
 } from 'graphql/generated/QueryGamesBySlug'
-import { formatNumber } from 'utils/format'
 
 const apolloClient = initializeApollo()
 
@@ -57,7 +56,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       description: game.description,
       gameInfo: {
         title: game.name,
-        price: formatNumber(game.price, { style: 'currency', currency: 'USD' }),
+        price: game.price,
         description: game.short_description
       },
       gallery: game.gallery.map((image) => ({

@@ -88,6 +88,9 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
   justify-content: space-between;
   position: relative;
   margin: 1.6rem;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c7 {
@@ -448,12 +451,12 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
                     <div
                       class="c12"
                     >
-                      R$ 235,00
+                      $NaN
                     </div>
                     <div
                       class="c13"
                     >
-                      R$ 215,00
+                      $NaN
                     </div>
                     <button
                       class="c14"
@@ -547,12 +550,12 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
                     <div
                       class="c12"
                     >
-                      R$ 235,00
+                      $NaN
                     </div>
                     <div
                       class="c13"
                     >
-                      R$ 215,00
+                      $NaN
                     </div>
                     <button
                       class="c14"
@@ -646,12 +649,12 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
                     <div
                       class="c12"
                     >
-                      R$ 235,00
+                      $NaN
                     </div>
                     <div
                       class="c13"
                     >
-                      R$ 215,00
+                      $NaN
                     </div>
                     <button
                       class="c14"
@@ -745,12 +748,12 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
                     <div
                       class="c12"
                     >
-                      R$ 235,00
+                      $NaN
                     </div>
                     <div
                       class="c13"
                     >
-                      R$ 215,00
+                      $NaN
                     </div>
                     <button
                       class="c14"

@@ -7,14 +7,15 @@ import {
 import Button from 'components/Button'
 import Ribbon, { RibbonColors, RibbonSizes } from 'components/Ribbon'
 import * as S from './styles'
+import { formatNumber } from 'utils/format'
 
 export type GameCardProps = {
   slug: string
   title: string
   developer: string
   img: string
-  price: string
-  promotionalPrice?: string
+  price: number
+  promotionalPrice?: number
   favorite?: boolean
   onFavorite?: () => void
   ribbon?: React.ReactNode
@@ -61,8 +62,17 @@ const GameCard = ({
         )}
       </S.FavButton>
       <S.BuyBox>
-        {!!promotionalPrice && <S.Price isPromotional>{price}</S.Price>}
-        <S.Price>{promotionalPrice || price}</S.Price>
+        {!!promotionalPrice && (
+          <S.Price isPromotional>
+            {formatNumber(price, { style: 'currency', currency: 'USD' })}
+          </S.Price>
+        )}
+        <S.Price>
+          {formatNumber(promotionalPrice || price, {
+            style: 'currency',
+            currency: 'USD'
+          })}
+        </S.Price>
         <Button icon={<AddShoppingCart />} size="small" />
       </S.BuyBox>
     </S.Content>

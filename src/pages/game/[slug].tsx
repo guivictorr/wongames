@@ -67,7 +67,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         developer: game.developers[0].name,
         releaseDate: game.release_date,
         platforms: game.platforms.map((platform) => platform.name),
-        publisher: game.publisher?.name,
+        publisher: game.publisher && game.publisher.name,
         genres: game.categories.map((genre) => genre.name),
         rating: game.rating
       },

@@ -8,12 +8,14 @@ export type ShowcaseProps = {
   heading?: string
   highlight?: HighlightProps
   gameCardSliderItems?: GameCardProps[]
+  color?: 'black' | 'white'
 }
 
 const Showcase = ({
   gameCardSliderItems,
   heading,
-  highlight
+  highlight,
+  color = 'white'
 }: ShowcaseProps) => (
   <S.Wrapper>
     {!!heading && (
@@ -22,7 +24,9 @@ const Showcase = ({
       </Heading>
     )}
     {!!highlight && <Highlight {...highlight} />}
-    {!!gameCardSliderItems && <GameCardSlider items={gameCardSliderItems} />}
+    {!!gameCardSliderItems && (
+      <GameCardSlider items={gameCardSliderItems} color={color} />
+    )}
   </S.Wrapper>
 )
 

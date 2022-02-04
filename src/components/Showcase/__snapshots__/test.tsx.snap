@@ -548,6 +548,7 @@ exports[`<Showcase /> should render correctly 1`] = `
   </section>
   <section
     class="c12 c13"
+    color="white"
   >
     <section
       class="c14"

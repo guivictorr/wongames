@@ -10,6 +10,9 @@ import {
   QueryGamesBySlug,
   QueryGamesBySlugVariables
 } from 'graphql/generated/QueryGamesBySlug'
+import { QUERY_RECOMMENDED } from 'graphql/queries/recommended'
+import { QueryRecommended } from 'graphql/generated/QueryRecommended'
+import { gameSliderMapper } from 'utils/mapper'
 
 const apolloClient = initializeApollo()
 
@@ -39,15 +42,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   if (!data.games.length) {
     return {
-      notFound: true,
-      props: {},
-      redirect: {
-        destination: '/'
-      }
+      notFound: true
     }
   }
 
   const game = data.games[0]
+
+  const { data: recommendedData } = await apolloClient.query<QueryRecommended>({
+    query: QUERY_RECOMMENDED
+  })
 
   return {
     revalidate: 60,
@@ -73,7 +76,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       },
       upcomingGames: gameCardMock,
       upcomingHighlight: highlightMock,
-      recommendedGames: gameCardMock
+      recommendedTitle:
+        recommendedData.recommended &&
+        recommendedData.recommended.section?.title,
+      recommendedGames: gameSliderMapper(
+        recommendedData.recommended?.section?.games
+      )
     }
   }
 }

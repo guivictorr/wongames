@@ -9,7 +9,7 @@ export const GameSliderFragment = gql`
       name
     }
     cover {
-      src: url
+      url
     }
   }
 `

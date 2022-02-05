@@ -11,7 +11,7 @@ import { ENUM_COMPONENTPAGERIBBON_COLOR, ENUM_COMPONENTPAGERIBBON_SIZE, ENUM_COM
 
 export interface QueryHome_banners_image {
   __typename: "UploadFile";
-  src: string;
+  url: string;
 }
 
 export interface QueryHome_banners_button {
@@ -43,7 +43,7 @@ export interface QueryHome_newGames_developers {
 
 export interface QueryHome_newGames_cover {
   __typename: "UploadFile";
-  src: string;
+  url: string;
 }
 
 export interface QueryHome_newGames {
@@ -62,7 +62,7 @@ export interface QueryHome_upcomingGames_developers {
 
 export interface QueryHome_upcomingGames_cover {
   __typename: "UploadFile";
-  src: string;
+  url: string;
 }
 
 export interface QueryHome_upcomingGames {
@@ -81,7 +81,7 @@ export interface QueryHome_freeGames_developers {
 
 export interface QueryHome_freeGames_cover {
   __typename: "UploadFile";
-  src: string;
+  url: string;
 }
 
 export interface QueryHome_freeGames {
@@ -95,12 +95,12 @@ export interface QueryHome_freeGames {
 
 export interface QueryHome_sections_newGames_highlight_background {
   __typename: "UploadFile";
-  src: string;
+  url: string;
 }
 
 export interface QueryHome_sections_newGames_highlight_floatImage {
   __typename: "UploadFile";
-  src: string;
+  url: string;
 }
 
 export interface QueryHome_sections_newGames_highlight {
@@ -122,12 +122,12 @@ export interface QueryHome_sections_newGames {
 
 export interface QueryHome_sections_upcomingGames_highlight_background {
   __typename: "UploadFile";
-  src: string;
+  url: string;
 }
 
 export interface QueryHome_sections_upcomingGames_highlight_floatImage {
   __typename: "UploadFile";
-  src: string;
+  url: string;
 }
 
 export interface QueryHome_sections_upcomingGames_highlight {
@@ -149,12 +149,12 @@ export interface QueryHome_sections_upcomingGames {
 
 export interface QueryHome_sections_freeGames_highlight_background {
   __typename: "UploadFile";
-  src: string;
+  url: string;
 }
 
 export interface QueryHome_sections_freeGames_highlight_floatImage {
   __typename: "UploadFile";
-  src: string;
+  url: string;
 }
 
 export interface QueryHome_sections_freeGames_highlight {
@@ -176,12 +176,12 @@ export interface QueryHome_sections_freeGames {
 
 export interface QueryHome_sections_popularGames_highlight_background {
   __typename: "UploadFile";
-  src: string;
+  url: string;
 }
 
 export interface QueryHome_sections_popularGames_highlight_floatImage {
   __typename: "UploadFile";
-  src: string;
+  url: string;
 }
 
 export interface QueryHome_sections_popularGames_highlight {
@@ -202,7 +202,7 @@ export interface QueryHome_sections_popularGames_games_developers {
 
 export interface QueryHome_sections_popularGames_games_cover {
   __typename: "UploadFile";
-  src: string;
+  url: string;
 }
 
 export interface QueryHome_sections_popularGames_games {

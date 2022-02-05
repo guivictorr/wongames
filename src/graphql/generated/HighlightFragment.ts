@@ -11,12 +11,12 @@ import { ENUM_COMPONENTPAGEHIGHLIGHT_ALIGNMENT } from "./globalTypes";
 
 export interface HighlightFragment_background {
   __typename: "UploadFile";
-  src: string;
+  url: string;
 }
 
 export interface HighlightFragment_floatImage {
   __typename: "UploadFile";
-  src: string;
+  url: string;
 }
 
 export interface HighlightFragment {

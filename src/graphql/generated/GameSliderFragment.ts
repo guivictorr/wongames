@@ -14,7 +14,7 @@ export interface GameSliderFragment_developers {
 
 export interface GameSliderFragment_cover {
   __typename: "UploadFile";
-  src: string;
+  url: string;
 }
 
 export interface GameSliderFragment {

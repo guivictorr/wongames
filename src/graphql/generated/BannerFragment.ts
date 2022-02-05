@@ -11,7 +11,7 @@ import { ENUM_COMPONENTPAGERIBBON_COLOR, ENUM_COMPONENTPAGERIBBON_SIZE } from ".
 
 export interface BannerFragment_image {
   __typename: "UploadFile";
-  src: string;
+  url: string;
 }
 
 export interface BannerFragment_button {

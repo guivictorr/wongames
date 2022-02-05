@@ -37,11 +37,16 @@ export const gameSliderMapper = (
 export const highlightMapper = (
   highlight: HighlightFragment | null | undefined
 ) => {
+  const floatImage = highlight?.floatImage?.url
+    ? `http://localhost:1337${highlight.floatImage?.url}`
+    : null
+
   return (
     highlight && {
       title: highlight.title,
       subtitle: highlight.subtitle,
       backgroundImage: `http://localhost:1337${highlight.background?.url}`,
+      floatImage,
       buttonLabel: highlight.buttonLabel,
       buttonLink: highlight.buttonLink
     }

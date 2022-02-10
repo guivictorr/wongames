@@ -1,19 +1,24 @@
 import { KeyboardArrowDown as ArrowDown } from '@styled-icons/material-outlined/KeyboardArrowDown'
-import ExploreSidebar, { ItemProps } from 'components/ExploreSidebar'
-import GameCard, { GameCardProps } from 'components/GameCard'
-import Base from 'templates/Base'
-import * as S from './styles'
 
+import Base from 'templates/Base'
+
+import ExploreSidebar, { ItemProps } from 'components/ExploreSidebar'
+import GameCard from 'components/GameCard'
 import { Grid } from 'components/Grid'
 
+import * as S from './styles'
+import useQueryGames from 'hooks/useQueryGames'
+
 export type GamesProps = {
-  games?: GameCardProps[]
   filterItems: ItemProps[]
 }
 
-const Games = ({ games = [], filterItems }: GamesProps) => {
+const Games = ({ filterItems }: GamesProps) => {
+  const { data, fetchMore } = useQueryGames({
+    variables: { limit: 15, start: 0 }
+  })
   const handleShowmore = () => {
-    return
+    return fetchMore({ variables: { limit: 15, start: data?.games.length } })
   }
   const handleFilter = () => {
     return
@@ -25,8 +30,15 @@ const Games = ({ games = [], filterItems }: GamesProps) => {
 
         <section>
           <Grid>
-            {games.map((game) => (
-              <GameCard {...game} key={game.title} />
+            {data?.games.map((game) => (
+              <GameCard
+                key={game.slug}
+                developer={game.developers[0].name}
+                img={`http://localhost:1337${game.cover?.url}`}
+                price={game.price}
+                slug={game.slug}
+                title={game.name}
+              />
             ))}
           </Grid>
 

@@ -15,7 +15,7 @@ export type GamesProps = {
 
 const Games = ({ filterItems }: GamesProps) => {
   const { data, fetchMore } = useQueryGames({
-    variables: { limit: 15, start: 0 }
+    variables: { limit: 15 }
   })
   const handleShowmore = () => {
     return fetchMore({ variables: { limit: 15, start: data?.games.length } })

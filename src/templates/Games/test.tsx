@@ -2,9 +2,11 @@ import { MockedProvider } from '@apollo/client/testing'
 import { screen } from '@testing-library/react'
 import { renderWithTheme } from 'utils/tests/helpers'
 import filterItemsMock from 'components/ExploreSidebar/mock'
+import { fetchMoreMock, gamesMock } from './mocks'
 
 import Games from '.'
-import { QUERY_GAMES } from 'graphql/queries/games'
+import userEvent from '@testing-library/user-event'
+import apolloCache from 'api/cache'
 
 jest.mock('templates/Base', () => ({
   __esModule: true,
@@ -20,43 +22,30 @@ jest.mock('components/ExploreSidebar', () => ({
   }
 }))
 
-const mocks = [
-  {
-    request: {
-      query: QUERY_GAMES,
-      variables: { limit: 15, start: 0 }
-    },
-    result: {
-      data: {
-        games: [
-          {
-            name: 'RimWorld',
-            slug: 'rimworld',
-            cover: {
-              url: '/uploads/rimworld_8e93acc963.jpg'
-            },
-            developers: [{ name: 'Ludeon Studios' }],
-            price: 65.99,
-            __typename: 'Game'
-          }
-        ]
-      }
-    }
-  }
-]
-
 describe('<Games />', () => {
   it('should render sections', async () => {
     renderWithTheme(
-      <MockedProvider mocks={mocks} addTypename={false}>
+      <MockedProvider mocks={[gamesMock]}>
         <Games filterItems={filterItemsMock} />
       </MockedProvider>
     )
 
     expect(await screen.findByTestId('Mock ExploreSidebar')).toBeInTheDocument()
-    expect(await screen.findByText('RimWorld')).toBeInTheDocument()
+    expect(await screen.findByText('Sample Game')).toBeInTheDocument()
     expect(
       await screen.findByRole('button', { name: 'Show more' })
     ).toBeInTheDocument()
+  })
+
+  it('should render more games when show more is clicked', async () => {
+    renderWithTheme(
+      <MockedProvider cache={apolloCache} mocks={[gamesMock, fetchMoreMock]}>
+        <Games filterItems={filterItemsMock} />
+      </MockedProvider>
+    )
+
+    userEvent.click(await screen.findByRole('button', { name: /show more/i }))
+
+    expect(await screen.findByText('Fetch More Game')).toBeInTheDocument()
   })
 })

@@ -20,7 +20,7 @@ type Values = {
 export type ItemProps = {
   title: string
   name: string
-  type: 'checkbox' | 'radio'
+  type: string
   fields: Field[]
 }
 

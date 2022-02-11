@@ -19,6 +19,7 @@ export interface GameSliderFragment_cover {
 
 export interface GameSliderFragment {
   __typename: "Game";
+  id: string;
   name: string;
   slug: string;
   price: number;

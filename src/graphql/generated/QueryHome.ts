@@ -48,6 +48,7 @@ export interface QueryHome_newGames_cover {
 
 export interface QueryHome_newGames {
   __typename: "Game";
+  id: string;
   name: string;
   slug: string;
   price: number;
@@ -67,6 +68,7 @@ export interface QueryHome_upcomingGames_cover {
 
 export interface QueryHome_upcomingGames {
   __typename: "Game";
+  id: string;
   name: string;
   slug: string;
   price: number;
@@ -86,6 +88,7 @@ export interface QueryHome_freeGames_cover {
 
 export interface QueryHome_freeGames {
   __typename: "Game";
+  id: string;
   name: string;
   slug: string;
   price: number;
@@ -207,6 +210,7 @@ export interface QueryHome_sections_popularGames_games_cover {
 
 export interface QueryHome_sections_popularGames_games {
   __typename: "Game";
+  id: string;
   name: string;
   slug: string;
   price: number;

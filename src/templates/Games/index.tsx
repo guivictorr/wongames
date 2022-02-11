@@ -23,7 +23,8 @@ export type GamesProps = {
 const Games = ({ filterItems }: GamesProps) => {
   const { push, query } = useRouter()
 
-  const { data, fetchMore } = useQueryGames({
+  const { data, fetchMore, loading } = useQueryGames({
+    notifyOnNetworkStatusChange: true,
     variables: {
       limit: 15,
       where: parseQueryStringToWhere({ queryString: query, filterItems }),
@@ -67,10 +68,19 @@ const Games = ({ filterItems }: GamesProps) => {
               ))}
             </Grid>
 
-            <S.Showmore role="button" onClick={handleShowmore}>
-              <p>Show more</p>
-              <ArrowDown size={35} />
-            </S.Showmore>
+            <S.ShowMore role="button" onClick={handleShowmore}>
+              {loading ? (
+                <S.ShowMoreLoading
+                  src="img/dots.svg"
+                  alt="Loading more games..."
+                />
+              ) : (
+                <S.ShowMoreButton>
+                  <p>Show more</p>
+                  <ArrowDown size={35} />
+                </S.ShowMoreButton>
+              )}
+            </S.ShowMore>
           </section>
         ) : (
           <Empty title=":(" description="We didn't find any games" />

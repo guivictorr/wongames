@@ -74,6 +74,9 @@ describe('<Games />', () => {
 
     userEvent.click(await screen.findByRole('button', { name: /show more/i }))
 
+    expect(
+      screen.getByRole('img', { name: /loading more games.../i })
+    ).toBeInTheDocument()
     expect(await screen.findByText(/Fetch More Game/i)).toBeInTheDocument()
   })
 

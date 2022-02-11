@@ -4,6 +4,7 @@ import Base from 'templates/Base'
 
 import ExploreSidebar, { ItemProps } from 'components/ExploreSidebar'
 import GameCard from 'components/GameCard'
+import Empty from 'components/Empty'
 import { Grid } from 'components/Grid'
 
 import * as S from './styles'
@@ -51,25 +52,29 @@ const Games = ({ filterItems }: GamesProps) => {
           onFilter={handleFilter}
         />
 
-        <section>
-          <Grid>
-            {data?.games.map((game) => (
-              <GameCard
-                key={game.slug}
-                developer={game.developers[0].name}
-                img={`http://localhost:1337${game.cover?.url}`}
-                price={game.price}
-                slug={game.slug}
-                title={game.name}
-              />
-            ))}
-          </Grid>
+        {data?.games.length ? (
+          <section>
+            <Grid>
+              {data?.games.map((game) => (
+                <GameCard
+                  key={game.slug}
+                  developer={game.developers[0].name}
+                  img={`http://localhost:1337${game.cover?.url}`}
+                  price={game.price}
+                  slug={game.slug}
+                  title={game.name}
+                />
+              ))}
+            </Grid>
 
-          <S.Showmore role="button" onClick={handleShowmore}>
-            <p>Show more</p>
-            <ArrowDown size={35} />
-          </S.Showmore>
-        </section>
+            <S.Showmore role="button" onClick={handleShowmore}>
+              <p>Show more</p>
+              <ArrowDown size={35} />
+            </S.Showmore>
+          </section>
+        ) : (
+          <Empty title=":(" description="We didn't find any games" />
+        )}
       </S.Main>
     </Base>
   )

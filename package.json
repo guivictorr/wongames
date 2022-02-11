@@ -28,7 +28,9 @@
   },
   "dependencies": {
     "@apollo/client": "^3.5.8",
+    "@types/lodash.xor": "^4.5.6",
     "graphql": "^15.5.1",
+    "lodash.xor": "^4.5.0",
     "next": "12",
     "next-pwa": "^5.3.1",
     "polished": "^4.1.3",

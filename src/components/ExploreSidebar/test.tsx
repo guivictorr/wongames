@@ -14,7 +14,7 @@ describe('<ExploreSidebar />', () => {
 
     expect(screen.getByRole('heading', { name: /price/i }))
     expect(screen.getByRole('heading', { name: /sort by/i }))
-    expect(screen.getByRole('heading', { name: /system/i }))
+    expect(screen.getByRole('heading', { name: /platforms/i }))
     expect(screen.getByRole('heading', { name: /genre/i }))
   })
 
@@ -37,7 +37,7 @@ describe('<ExploreSidebar />', () => {
         onFilter={jest.fn}
         items={itemsMock}
         initialValues={{
-          windows: true,
+          platforms: ['windows'],
           sort_by: 'low-to-high'
         }}
       />
@@ -53,7 +53,7 @@ describe('<ExploreSidebar />', () => {
       <ExploreSidebar
         items={itemsMock}
         initialValues={{
-          windows: true,
+          platforms: ['windows'],
           sort_by: 'low-to-high'
         }}
         onFilter={onFilter}
@@ -63,7 +63,7 @@ describe('<ExploreSidebar />', () => {
     userEvent.click(screen.getByRole('button', { name: /filter/i }))
 
     expect(onFilter).toHaveBeenCalledWith({
-      windows: true,
+      platforms: ['windows'],
       sort_by: 'low-to-high'
     })
   })
@@ -73,16 +73,19 @@ describe('<ExploreSidebar />', () => {
     renderWithTheme(<ExploreSidebar items={itemsMock} onFilter={onFilter} />)
 
     userEvent.click(screen.getByLabelText(/windows/i))
+    userEvent.click(screen.getByLabelText(/linux/i))
     userEvent.click(screen.getByLabelText(/low to high/i))
 
     userEvent.click(screen.getByRole('button', { name: /filter/i }))
 
     expect(onFilter).toHaveBeenCalledWith({
-      windows: true,
+      platforms: ['windows', 'linux'],
       sort_by: 'low-to-high'
     })
 
     expect(screen.getByLabelText(/windows/i)).toBeChecked()
+    expect(screen.getByLabelText(/linux/i)).toBeChecked()
+
     expect(screen.getByLabelText(/low to high/i)).toBeChecked()
   })
 

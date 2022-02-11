@@ -4,7 +4,7 @@ import Checkbox from 'components/Checkbox'
 import Heading from 'components/Heading'
 import Radio from 'components/Radio'
 import { ParsedUrlQueryInput } from 'querystring'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Close, FilterList } from 'styled-icons/material-outlined'
 
 import * as S from './styles'
@@ -37,8 +37,7 @@ const ExploreSidebar = ({
   const [values, setValues] = useState<Values>(initialValues)
   const [isOpen, setIsOpen] = useState(false)
 
-  const handleFilter = () => {
-    onFilter(values)
+  const handleFilterMenu = () => {
     setIsOpen(false)
   }
 
@@ -54,6 +53,10 @@ const ExploreSidebar = ({
       [name]: xor(currentList, [value])
     }))
   }
+
+  useEffect(() => {
+    onFilter(values)
+  }, [values, onFilter])
 
   return (
     <S.Wrapper isOpen={isOpen}>
@@ -102,7 +105,7 @@ const ExploreSidebar = ({
         ))}
       </S.Content>
       <S.Footer>
-        <Button size="medium" fullWidth onClick={handleFilter}>
+        <Button size="medium" fullWidth onClick={handleFilterMenu}>
           Filter
         </Button>
       </S.Footer>

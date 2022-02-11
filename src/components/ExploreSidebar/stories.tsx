@@ -7,7 +7,8 @@ export default {
   title: 'Form/ExploreSidebar',
   component: ExploreSidebar,
   args: {
-    items
+    items,
+    onFilter: () => console.log('onFilter')
   },
   parameters: {
     layout: 'fullscreen',
@@ -15,7 +16,7 @@ export default {
       default: 'dark'
     }
   }
-} as Meta
+} as Meta<ExploreSidebarProps>
 
 export const Default: Story<ExploreSidebarProps> = (args) => (
   <div style={{ padding: 16, maxWidth: 320 }}>

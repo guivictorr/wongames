@@ -76,7 +76,7 @@ describe('<ExploreSidebar />', () => {
     userEvent.click(screen.getByLabelText(/linux/i))
     userEvent.click(screen.getByLabelText(/low to high/i))
 
-    userEvent.click(screen.getByRole('button', { name: /filter/i }))
+    expect(onFilter).toHaveBeenCalledTimes(4)
 
     expect(onFilter).toHaveBeenCalledWith({
       platforms: ['windows', 'linux'],
@@ -96,7 +96,7 @@ describe('<ExploreSidebar />', () => {
     userEvent.click(screen.getByLabelText(/high to low/i))
     userEvent.click(screen.getByLabelText(/low to high/i))
 
-    userEvent.click(screen.getByRole('button', { name: /filter/i }))
+    expect(onFilter).toHaveBeenCalledTimes(3)
 
     expect(onFilter).toHaveBeenCalledWith({
       sort_by: 'low-to-high'
@@ -126,5 +126,8 @@ describe('<ExploreSidebar />', () => {
     userEvent.click(screen.getByLabelText(/close filters/))
 
     expect(Element).not.toHaveStyleRule('opacity', '1', variant)
+
+    userEvent.click(screen.getByLabelText(/open filters/))
+    userEvent.click(screen.getByRole('button', { name: /filter/i }))
   })
 })

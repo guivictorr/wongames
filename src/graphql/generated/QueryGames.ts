@@ -26,8 +26,19 @@ export interface QueryGames_games {
   cover: QueryGames_games_cover | null;
 }
 
+export interface QueryGames_gamesConnection_values {
+  __typename: "Game";
+  id: string;
+}
+
+export interface QueryGames_gamesConnection {
+  __typename: "GameConnection";
+  values: (QueryGames_gamesConnection_values | null)[] | null;
+}
+
 export interface QueryGames {
   games: QueryGames_games[];
+  gamesConnection: QueryGames_gamesConnection | null;
 }
 
 export interface QueryGamesVariables {

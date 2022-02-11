@@ -31,6 +31,12 @@ const Games = ({ filterItems }: GamesProps) => {
       sort: query.sort as string | null
     }
   })
+
+  if (!data) return <p>loading...</p>
+
+  const hasMoreGmaes =
+    data?.games.length < (data?.gamesConnection?.values?.length || 0)
+
   const handleShowmore = () => {
     return fetchMore({ variables: { limit: 15, start: data?.games.length } })
   }
@@ -68,19 +74,21 @@ const Games = ({ filterItems }: GamesProps) => {
               ))}
             </Grid>
 
-            <S.ShowMore role="button" onClick={handleShowmore}>
-              {loading ? (
-                <S.ShowMoreLoading
-                  src="img/dots.svg"
-                  alt="Loading more games..."
-                />
-              ) : (
-                <S.ShowMoreButton>
-                  <p>Show more</p>
-                  <ArrowDown size={35} />
-                </S.ShowMoreButton>
-              )}
-            </S.ShowMore>
+            {hasMoreGmaes && (
+              <S.ShowMore role="button" onClick={handleShowmore}>
+                {loading ? (
+                  <S.ShowMoreLoading
+                    src="img/dots.svg"
+                    alt="Loading more games..."
+                  />
+                ) : (
+                  <S.ShowMoreButton>
+                    <p>Show more</p>
+                    <ArrowDown size={35} />
+                  </S.ShowMoreButton>
+                )}
+              </S.ShowMore>
+            )}
           </section>
         ) : (
           <Empty title=":(" description="We didn't find any games" />

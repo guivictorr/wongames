@@ -8,25 +8,48 @@ import { Grid } from 'components/Grid'
 
 import * as S from './styles'
 import useQueryGames from 'hooks/useQueryGames'
+import { useRouter } from 'next/router'
+import {
+  parseQueryStringToFilter,
+  parseQueryStringToWhere
+} from 'utils/filter-parser'
+import { ParsedUrlQueryInput } from 'querystring'
 
 export type GamesProps = {
   filterItems: ItemProps[]
 }
 
 const Games = ({ filterItems }: GamesProps) => {
+  const { push, query } = useRouter()
+
   const { data, fetchMore } = useQueryGames({
-    variables: { limit: 15 }
+    variables: {
+      limit: 15,
+      where: parseQueryStringToWhere({ queryString: query, filterItems }),
+      sort: query.sort as string | null
+    }
   })
   const handleShowmore = () => {
     return fetchMore({ variables: { limit: 15, start: data?.games.length } })
   }
-  const handleFilter = () => {
+  const handleFilter = (items: ParsedUrlQueryInput) => {
+    push({
+      pathname: '/games',
+      query: items
+    })
     return
   }
   return (
     <Base>
       <S.Main>
-        <ExploreSidebar items={filterItems} onFilter={handleFilter} />
+        <ExploreSidebar
+          initialValues={parseQueryStringToFilter({
+            queryString: query,
+            filterItems
+          })}
+          items={filterItems}
+          onFilter={handleFilter}
+        />
 
         <section>
           <Grid>

@@ -56,7 +56,8 @@ const ExploreSidebar = ({
 
   useEffect(() => {
     onFilter(values)
-  }, [values, onFilter])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [values])
 
   return (
     <S.Wrapper isOpen={isOpen}>

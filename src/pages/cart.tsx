@@ -6,7 +6,7 @@ import cards from 'components/PaymentOptions/mock'
 import { QUERY_RECOMMENDED } from 'graphql/queries/recommended'
 import { QueryRecommended } from 'graphql/generated/QueryRecommended'
 import { initializeApollo } from 'api/apollo'
-import { gameSliderMapper, highlightMapper } from 'utils/mapper'
+import { gameSliderMapper, highlightMapper } from 'utils/mappers'
 
 function CartPage(props: CartProps) {
   return <Cart {...props} />

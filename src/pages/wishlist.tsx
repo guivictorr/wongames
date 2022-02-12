@@ -5,7 +5,7 @@ import Wishlist, { WishlistTemplateProps } from 'templates/Wishlist'
 import { initializeApollo } from 'api/apollo'
 import { QUERY_RECOMMENDED } from 'graphql/queries/recommended'
 import { QueryRecommended } from 'graphql/generated/QueryRecommended'
-import { gameSliderMapper, highlightMapper } from 'utils/mapper'
+import { gameSliderMapper, highlightMapper } from 'utils/mappers'
 
 const apolloClient = initializeApollo()
 

@@ -5,11 +5,7 @@ import { GetStaticProps } from 'next'
 import { initializeApollo } from 'api/apollo'
 import { QueryHome, QueryHomeVariables } from 'graphql/generated/QueryHome'
 import { QUERY_HOME } from 'graphql/queries/home'
-import {
-  bannerMapper,
-  gameSliderMapper,
-  highlightMapper
-} from 'utils/mappers/mapper'
+import { bannerMapper, gameSliderMapper, highlightMapper } from 'utils/mappers'
 
 const apollo = initializeApollo()
 

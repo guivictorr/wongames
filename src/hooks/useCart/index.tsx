@@ -23,16 +23,22 @@ export type CartContextData = {
   items: CartItem[]
   quantity: number
   total: string
+  loading: boolean
   isInCart: (id: string) => boolean
   addToCart: (id: string) => void
+  removeFromCart: (id: string) => void
+  clearCart: () => void
 }
 
 const CartContextDefaultValues = {
   items: [],
   quantity: 0,
   total: '$0.00',
+  loading: false,
   isInCart: () => false,
-  addToCart: () => null
+  addToCart: () => null,
+  removeFromCart: () => null,
+  clearCart: () => null
 }
 
 const CartContext = createContext<CartContextData>(CartContextDefaultValues)
@@ -52,7 +58,7 @@ const CartProvider = ({ children }: CartProviderProps) => {
     }
   }, [])
 
-  const { data } = useQueryGames({
+  const { data, loading } = useQueryGames({
     skip: !cartItems?.length, // If there are no items in the cart, skip the query
     variables: {
       where: {
@@ -68,24 +74,34 @@ const CartProvider = ({ children }: CartProviderProps) => {
 
   const isInCart = (id: string) => cartItems.includes(id)
 
-  const addToCart = (id: string) => {
-    const newCartItems = [...cartItems, id]
+  const addToCart = (id: string) => saveCart([...cartItems, id])
 
-    setCartItems(newCartItems)
-    setStorageItem(CART_KEY, newCartItems)
+  const saveCart = (items: string[]) => {
+    setCartItems(items)
+    setStorageItem(CART_KEY, items)
   }
+
+  const removeFromCart = (id: string) => {
+    const newCartItems = cartItems.filter((item) => item !== id)
+    saveCart(newCartItems)
+  }
+
+  const clearCart = () => saveCart([])
 
   return (
     <CartContext.Provider
       value={{
         items: cartMapper(data?.games),
         quantity: cartItems.length,
-        total: formatNumber(getCartTotal, {
+        total: formatNumber(getCartTotal || 0, {
           style: 'currency',
           currency: 'USD'
         }),
         isInCart,
-        addToCart
+        addToCart,
+        removeFromCart,
+        clearCart,
+        loading
       }}
     >
       {children}

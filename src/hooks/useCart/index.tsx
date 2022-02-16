@@ -6,6 +6,7 @@ import {
   useState,
   useEffect
 } from 'react'
+import { formatNumber } from 'utils/format'
 import { getStorageItem } from 'utils/local-storage'
 import { cartMapper } from 'utils/mappers'
 
@@ -20,10 +21,14 @@ export type CartItem = {
 
 export type CartContextData = {
   items: CartItem[]
+  quantity: number
+  total: string
 }
 
 const CartContextDefaultValues = {
-  items: []
+  items: [],
+  quantity: 0,
+  total: '$0.00'
 }
 
 const CartContext = createContext<CartContextData>(CartContextDefaultValues)
@@ -52,10 +57,20 @@ const CartProvider = ({ children }: CartProviderProps) => {
     }
   })
 
+  const getCartTotal =
+    data?.games.reduce((acc, item) => {
+      return acc + item.price
+    }, 0) || 0
+
   return (
     <CartContext.Provider
       value={{
-        items: cartMapper(data?.games)
+        items: cartMapper(data?.games),
+        quantity: cartItems.length,
+        total: formatNumber(getCartTotal, {
+          style: 'currency',
+          currency: 'USD'
+        })
       }}
     >
       {children}

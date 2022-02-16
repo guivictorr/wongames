@@ -1,6 +1,7 @@
 import { HighlightFragment } from 'graphql/generated/HighlightFragment'
 import { QueryGames_games } from 'graphql/generated/QueryGames'
 import { QueryHome_banners } from 'graphql/generated/QueryHome'
+import { formatNumber } from 'utils/format'
 
 export const bannerMapper = (banners: QueryHome_banners[]) => {
   return banners.map((banner) => ({
@@ -48,4 +49,20 @@ export const highlightMapper = (
         alignment: highlight.alignment
       }
     : {}
+}
+
+export const cartMapper = (games: QueryGames_games[] | null | undefined) => {
+  if (!games) {
+    return []
+  }
+
+  return games?.map((game) => ({
+    id: game.id,
+    img: `http://localhost:1337${game.cover?.url}`,
+    price: formatNumber(game.price, {
+      style: 'currency',
+      currency: 'USD'
+    }),
+    title: game.name
+  }))
 }

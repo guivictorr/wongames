@@ -7,7 +7,7 @@ import {
   useEffect
 } from 'react'
 import { formatNumber } from 'utils/format'
-import { getStorageItem } from 'utils/local-storage'
+import { getStorageItem, setStorageItem } from 'utils/local-storage'
 import { cartMapper } from 'utils/mappers'
 
 const CART_KEY = 'cartItems'
@@ -23,12 +23,16 @@ export type CartContextData = {
   items: CartItem[]
   quantity: number
   total: string
+  isInCart: (id: string) => boolean
+  addToCart: (id: string) => void
 }
 
 const CartContextDefaultValues = {
   items: [],
   quantity: 0,
-  total: '$0.00'
+  total: '$0.00',
+  isInCart: () => false,
+  addToCart: () => null
 }
 
 const CartContext = createContext<CartContextData>(CartContextDefaultValues)
@@ -62,6 +66,15 @@ const CartProvider = ({ children }: CartProviderProps) => {
       return acc + item.price
     }, 0) || 0
 
+  const isInCart = (id: string) => cartItems.includes(id)
+
+  const addToCart = (id: string) => {
+    const newCartItems = [...cartItems, id]
+
+    setCartItems(newCartItems)
+    setStorageItem(CART_KEY, newCartItems)
+  }
+
   return (
     <CartContext.Provider
       value={{
@@ -70,7 +83,9 @@ const CartProvider = ({ children }: CartProviderProps) => {
         total: formatNumber(getCartTotal, {
           style: 'currency',
           currency: 'USD'
-        })
+        }),
+        isInCart,
+        addToCart
       }}
     >
       {children}

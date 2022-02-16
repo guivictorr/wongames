@@ -1,3 +1,4 @@
+import useQueryGames from 'hooks/useQueryGames'
 import {
   ReactNode,
   createContext,
@@ -6,11 +7,19 @@ import {
   useEffect
 } from 'react'
 import { getStorageItem } from 'utils/local-storage'
+import { cartMapper } from 'utils/mappers'
 
 const CART_KEY = 'cartItems'
 
+export type CartItem = {
+  id: string
+  img: string
+  title: string
+  price: string
+}
+
 export type CartContextData = {
-  items: string[]
+  items: CartItem[]
 }
 
 const CartContextDefaultValues = {
@@ -34,10 +43,19 @@ const CartProvider = ({ children }: CartProviderProps) => {
     }
   }, [])
 
+  const { data } = useQueryGames({
+    skip: !cartItems?.length, // If there are no items in the cart, skip the query
+    variables: {
+      where: {
+        id: cartItems
+      }
+    }
+  })
+
   return (
     <CartContext.Provider
       value={{
-        items: cartItems
+        items: cartMapper(data?.games)
       }}
     >
       {children}

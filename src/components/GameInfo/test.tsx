@@ -3,6 +3,7 @@ import { screen, render } from 'utils/test-utils'
 import GameInfo from '.'
 
 const props = {
+  id: '1',
   title: 'Borderlands 3',
   description: 'My game description',
   price: 200.0

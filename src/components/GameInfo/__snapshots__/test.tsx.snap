@@ -83,6 +83,12 @@ exports[`<GameInfo /> should render the heading, description and price 1`] = `
   color: #e20e8d;
 }
 
+.c7 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
 .c1 {
   color: #030517;
   position: relative;
@@ -143,12 +149,6 @@ exports[`<GameInfo /> should render the heading, description and price 1`] = `
   top: 3.6rem;
   border-top-width: 1rem;
   border-right-width: 2rem;
-}
-
-.c7 {
-  display: inline-block;
-  vertical-align: middle;
-  overflow: hidden;
 }
 
 .c0 {
@@ -255,6 +255,7 @@ exports[`<GameInfo /> should render the heading, description and price 1`] = `
     >
       <svg
         aria-hidden="true"
+        aria-label="Add to cart"
         class="c7"
         fill="currentColor"
         focusable="false"

@@ -1,17 +1,18 @@
 import { Story, Meta } from '@storybook/react'
-import CartIcon, { CartIconProps } from '.'
+import CartIcon from '.'
 
 export default {
   title: 'Data display/CartIcon',
   component: CartIcon,
-  args: {
-    quantity: 12
-  },
   parameters: {
     backgrounds: {
       default: 'dark'
     }
   }
-} as Meta<CartIconProps>
+} as Meta
 
-export const Default: Story<CartIconProps> = (args) => <CartIcon {...args} />
+export const Default: Story = (args) => <CartIcon {...args} />
+export const WithIcon: Story = (args) => <CartIcon {...args} />
+WithIcon.args = {
+  quantity: 3
+}

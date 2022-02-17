@@ -1,13 +1,13 @@
-import { screen, waitFor } from '@testing-library/react'
+import { screen, render, waitFor } from 'utils/test-utils'
+
 import userEvent from '@testing-library/user-event'
-import { renderWithTheme } from 'utils/tests/helpers'
 
 import PaymentOptions from '.'
 import cards from './mock'
 
 describe('<PaymentOptions />', () => {
   it('should render the saved card options and the add new card button', () => {
-    renderWithTheme(<PaymentOptions cards={cards} handlePayment={jest.fn} />)
+    render(<PaymentOptions cards={cards} handlePayment={jest.fn} />)
 
     expect(screen.getByLabelText(/4325/)).toBeInTheDocument()
     expect(screen.getByLabelText(/4326/)).toBeInTheDocument()
@@ -15,7 +15,7 @@ describe('<PaymentOptions />', () => {
   })
 
   it('should render select card when clicking on the label', async () => {
-    renderWithTheme(<PaymentOptions cards={cards} handlePayment={jest.fn} />)
+    render(<PaymentOptions cards={cards} handlePayment={jest.fn} />)
 
     userEvent.click(screen.getByLabelText(/4325/))
 
@@ -25,7 +25,7 @@ describe('<PaymentOptions />', () => {
   })
 
   it('should enable buy now button when select a credit card', async () => {
-    renderWithTheme(<PaymentOptions cards={cards} handlePayment={jest.fn} />)
+    render(<PaymentOptions cards={cards} handlePayment={jest.fn} />)
 
     expect(screen.getByRole('button', { name: /buy now/i })).toBeDisabled()
     userEvent.click(screen.getByLabelText(/4325/))
@@ -34,9 +34,7 @@ describe('<PaymentOptions />', () => {
 
   it('should call handlePayment when credit card is selected', async () => {
     const mockFunction = jest.fn()
-    renderWithTheme(
-      <PaymentOptions cards={cards} handlePayment={mockFunction} />
-    )
+    render(<PaymentOptions cards={cards} handlePayment={mockFunction} />)
 
     userEvent.click(screen.getByLabelText(/4325/))
     userEvent.click(screen.getByRole('button', { name: /buy now/i }))
@@ -46,9 +44,7 @@ describe('<PaymentOptions />', () => {
 
   it('should not call handlePayment when credit card is not selected', async () => {
     const mockFunction = jest.fn()
-    renderWithTheme(
-      <PaymentOptions cards={cards} handlePayment={mockFunction} />
-    )
+    render(<PaymentOptions cards={cards} handlePayment={mockFunction} />)
 
     userEvent.click(screen.getByRole('button', { name: /buy now/i }))
 

@@ -30,7 +30,7 @@ export type CartContextData = {
   clearCart: () => void
 }
 
-const CartContextDefaultValues = {
+export const CartContextDefaultValues = {
   items: [],
   quantity: 0,
   total: '$0.00',
@@ -111,4 +111,4 @@ const CartProvider = ({ children }: CartProviderProps) => {
 
 const useCart = () => useContext(CartContext)
 
-export { CartProvider, useCart }
+export { CartProvider, useCart, CartContext }

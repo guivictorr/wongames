@@ -1,12 +1,12 @@
-import { screen } from '@testing-library/react'
+import { screen, render } from 'utils/test-utils'
+
 import theme from 'styles/theme'
-import { renderWithTheme } from 'utils/tests/helpers'
 
 import Logo from '.'
 
 describe('<Logo />', () => {
   it('should render white label by default', () => {
-    renderWithTheme(<Logo />)
+    render(<Logo />)
 
     expect(screen.getByLabelText(/Won games/i).parentElement).toHaveStyle({
       color: theme.colors.white
@@ -14,7 +14,7 @@ describe('<Logo />', () => {
   })
 
   it('should render black label when color black is passed', () => {
-    renderWithTheme(<Logo color="black" />)
+    render(<Logo color="black" />)
 
     expect(screen.getByLabelText(/Won games/i).parentElement).toHaveStyle({
       color: theme.colors.black
@@ -22,7 +22,7 @@ describe('<Logo />', () => {
   })
 
   it('should render a normal size logo by default', () => {
-    renderWithTheme(<Logo />)
+    render(<Logo />)
 
     expect(screen.getByLabelText(/Won games/i).parentElement).toHaveStyle({
       width: '11rem',
@@ -31,7 +31,7 @@ describe('<Logo />', () => {
   })
 
   it('should render a bigger logo when size large is passed', () => {
-    renderWithTheme(<Logo size="large" />)
+    render(<Logo size="large" />)
 
     expect(screen.getByLabelText(/Won games/i).parentElement).toHaveStyle({
       width: '20rem',
@@ -40,7 +40,7 @@ describe('<Logo />', () => {
   })
 
   it('should render a logo without text if hideOnMobile', () => {
-    renderWithTheme(<Logo hideOnMobile />)
+    render(<Logo hideOnMobile />)
 
     expect(screen.getByLabelText(/Won games/i).parentElement).toHaveStyleRule(
       'width',
@@ -50,7 +50,7 @@ describe('<Logo />', () => {
   })
 
   it('should render the logo with id', () => {
-    renderWithTheme(<Logo id="myId" />)
+    render(<Logo id="myId" />)
 
     expect(document.querySelector('#myId')).toBeInTheDocument()
   })

@@ -1,30 +1,30 @@
-import { screen, waitFor } from '@testing-library/react'
+import { screen, render, waitFor } from 'utils/test-utils'
+
 import userEvent from '@testing-library/user-event'
 import { Message } from 'styled-icons/material-outlined'
-import { renderWithTheme } from 'utils/tests/helpers'
 
 import TextField from '.'
 
 describe('<TextField />', () => {
   it('should render with label', () => {
-    renderWithTheme(<TextField label="Label" name="label" />)
+    render(<TextField label="Label" name="label" />)
 
     expect(screen.getByLabelText('Label')).toBeInTheDocument()
   })
 
   it('should render without label', () => {
-    renderWithTheme(<TextField />)
+    render(<TextField />)
     expect(screen.queryByLabelText('label')).not.toBeInTheDocument()
   })
 
   it('should render with placeholder', () => {
-    renderWithTheme(<TextField placeholder="hey you" />)
+    render(<TextField placeholder="hey you" />)
     expect(screen.getByPlaceholderText(/hey you/i)).toBeInTheDocument()
   })
 
   it('should change the value when typing', async () => {
     const onInput = jest.fn()
-    renderWithTheme(
+    render(
       <TextField
         onInput={onInput}
         label="Label"
@@ -46,16 +46,14 @@ describe('<TextField />', () => {
   })
 
   it('should be accessible by tab', () => {
-    renderWithTheme(
-      <TextField name="textfield" label="Textfield" id="textfield" />
-    )
+    render(<TextField name="textfield" label="Textfield" id="textfield" />)
     expect(document.body).toHaveFocus()
     userEvent.tab()
     expect(screen.getByRole('textbox')).toHaveFocus()
   })
 
   it('should render with icon', () => {
-    renderWithTheme(
+    render(
       <TextField
         name="textfield"
         label="Textfield"
@@ -67,7 +65,7 @@ describe('<TextField />', () => {
   })
 
   it('should render icon on the right side', () => {
-    renderWithTheme(
+    render(
       <TextField iconPosition="right" icon={<Message data-testid="icon" />} />
     )
 
@@ -78,7 +76,7 @@ describe('<TextField />', () => {
 
   it('should not change the value when is disabled', async () => {
     const onInput = jest.fn()
-    renderWithTheme(
+    render(
       <TextField
         onInput={onInput}
         label="Label"
@@ -100,7 +98,7 @@ describe('<TextField />', () => {
   })
 
   it('should not be accessible by tab when is disabled', () => {
-    renderWithTheme(
+    render(
       <TextField disabled name="textfield" label="Textfield" id="textfield" />
     )
     expect(document.body).toHaveFocus()
@@ -109,7 +107,7 @@ describe('<TextField />', () => {
   })
 
   it('should render error message and change style', () => {
-    const { container } = renderWithTheme(
+    const { container } = render(
       <TextField
         disabled
         name="textfield"

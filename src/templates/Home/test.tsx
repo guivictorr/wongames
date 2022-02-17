@@ -1,14 +1,13 @@
 import 'match-media-mock'
-import { screen } from '@testing-library/react'
-import { renderWithTheme } from 'utils/tests/helpers'
+import { render, screen } from 'utils/test-utils'
 
 import bannerMock from 'components/BannerSlider/mock'
 import gamesMock from 'components/GameCardSlider/mock'
 import highlightMock from 'components/Highlight/mock'
 
-import Home from '.'
+import Home, { HomeTemplateProps } from '.'
 
-const props = {
+const props: HomeTemplateProps = {
   banners: bannerMock,
   newGames: gamesMock,
   mostPopularHighlight: highlightMock,
@@ -17,7 +16,11 @@ const props = {
   upcomingHighlight: highlightMock,
   upcomingMoreGames: gamesMock,
   freeGames: gamesMock,
-  freeHighlight: highlightMock
+  freeHighlight: highlightMock,
+  newGamesTitle: 'New Games',
+  freeGamesTitle: 'Free Games',
+  mostPopularGamesTitle: 'Most Popular',
+  upcomingGamesTitle: 'Upcoming'
 }
 
 jest.mock('components/Showcase', () => ({
@@ -31,7 +34,7 @@ jest.mock('components/BannerSlider', () => ({
 
 describe('<Home />', () => {
   it('should render correctly', () => {
-    renderWithTheme(<Home {...props} />)
+    render(<Home {...props} />)
 
     expect(screen.getAllByTestId('Showcase mock')).toHaveLength(5)
     expect(screen.getByTestId('Banner mock')).toBeInTheDocument()

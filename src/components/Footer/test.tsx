@@ -1,11 +1,10 @@
-import { screen } from '@testing-library/react'
-import { renderWithTheme } from 'utils/tests/helpers'
+import { screen, render } from 'utils/test-utils'
 
 import Footer from '.'
 
 describe('<Footer />', () => {
   it('should render 4 columns topics', () => {
-    const { container } = renderWithTheme(<Footer />)
+    const { container } = render(<Footer />)
     const columns = ['Contact', 'Follow us', 'Links', 'Location']
 
     columns.forEach((name) => {
@@ -16,7 +15,7 @@ describe('<Footer />', () => {
   })
 
   it('should render the logo with black color', () => {
-    renderWithTheme(<Footer />)
+    render(<Footer />)
     expect(screen.getByLabelText(/won games/i)).toBeInTheDocument()
   })
 })

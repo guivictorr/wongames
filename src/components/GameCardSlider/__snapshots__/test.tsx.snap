@@ -397,7 +397,7 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
               >
                 <a
                   class="c4"
-                  href="/game/undefined"
+                  href="/game/population-zero"
                 >
                   <img
                     alt="Population Zero"
@@ -410,7 +410,7 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
                 >
                   <a
                     class="c7"
-                    href="/game/undefined"
+                    href="/game/population-zero"
                   >
                     <h3
                       class="c8"
@@ -451,12 +451,12 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
                     <div
                       class="c12"
                     >
-                      $NaN
+                      $235.00
                     </div>
                     <div
                       class="c13"
                     >
-                      $NaN
+                      $215.00
                     </div>
                     <button
                       class="c14"
@@ -496,7 +496,7 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
               >
                 <a
                   class="c4"
-                  href="/game/undefined"
+                  href="/game/population-zero"
                 >
                   <img
                     alt="Population Zero"
@@ -509,7 +509,7 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
                 >
                   <a
                     class="c7"
-                    href="/game/undefined"
+                    href="/game/population-zero"
                   >
                     <h3
                       class="c8"
@@ -550,12 +550,12 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
                     <div
                       class="c12"
                     >
-                      $NaN
+                      $235.00
                     </div>
                     <div
                       class="c13"
                     >
-                      $NaN
+                      $215.00
                     </div>
                     <button
                       class="c14"
@@ -595,7 +595,7 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
               >
                 <a
                   class="c4"
-                  href="/game/undefined"
+                  href="/game/population-zero"
                 >
                   <img
                     alt="Population Zero"
@@ -608,7 +608,7 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
                 >
                   <a
                     class="c7"
-                    href="/game/undefined"
+                    href="/game/population-zero"
                   >
                     <h3
                       class="c8"
@@ -649,12 +649,12 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
                     <div
                       class="c12"
                     >
-                      $NaN
+                      $235.00
                     </div>
                     <div
                       class="c13"
                     >
-                      $NaN
+                      $215.00
                     </div>
                     <button
                       class="c14"
@@ -694,7 +694,7 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
               >
                 <a
                   class="c4"
-                  href="/game/undefined"
+                  href="/game/population-zero"
                 >
                   <img
                     alt="Population Zero"
@@ -707,7 +707,7 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
                 >
                   <a
                     class="c7"
-                    href="/game/undefined"
+                    href="/game/population-zero"
                   >
                     <h3
                       class="c8"
@@ -748,12 +748,12 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
                     <div
                       class="c12"
                     >
-                      $NaN
+                      $235.00
                     </div>
                     <div
                       class="c13"
                     >
-                      $NaN
+                      $215.00
                     </div>
                     <button
                       class="c14"

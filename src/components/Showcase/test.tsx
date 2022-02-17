@@ -1,8 +1,8 @@
 import 'match-media-mock'
-import { screen } from '@testing-library/react'
+import { screen, render } from 'utils/test-utils'
+
 import cardSliderMock from 'components/GameCardSlider/mock'
 import highlightMock from 'components/Highlight/mock'
-import { renderWithTheme } from 'utils/tests/helpers'
 
 import Showcase from '.'
 
@@ -14,12 +14,12 @@ const props = {
 
 describe('<Showcase />', () => {
   it('should render correctly', () => {
-    const { container } = renderWithTheme(<Showcase {...props} />)
+    const { container } = render(<Showcase {...props} />)
     expect(container.firstChild).toMatchSnapshot()
   })
 
   it('should render the heading', () => {
-    renderWithTheme(<Showcase {...props} />)
+    render(<Showcase {...props} />)
 
     expect(
       screen.getByRole('heading', { name: /Heading/i })
@@ -34,7 +34,7 @@ describe('<Showcase />', () => {
 
   it('should render without heading', () => {
     const { heading, ...rest } = props
-    renderWithTheme(<Showcase {...rest} />)
+    render(<Showcase {...rest} />)
     expect(
       screen.queryByRole('heading', { name: heading })
     ).not.toBeInTheDocument()
@@ -48,7 +48,7 @@ describe('<Showcase />', () => {
 
   it('should render without highlight', () => {
     const { highlight, ...rest } = props
-    renderWithTheme(<Showcase {...rest} />)
+    render(<Showcase {...rest} />)
     expect(
       screen.getByRole('heading', { name: props.heading })
     ).toBeInTheDocument()
@@ -62,7 +62,7 @@ describe('<Showcase />', () => {
 
   it('should render without slider', () => {
     const { gameCardSliderItems, ...rest } = props
-    renderWithTheme(<Showcase {...rest} />)
+    render(<Showcase {...rest} />)
     expect(
       screen.getByRole('heading', { name: props.heading })
     ).toBeInTheDocument()

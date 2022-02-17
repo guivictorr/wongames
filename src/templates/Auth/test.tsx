@@ -1,11 +1,10 @@
-import { screen } from '@testing-library/react'
-import { renderWithTheme } from 'utils/tests/helpers'
+import { screen, render } from 'utils/test-utils'
 
 import Auth from '.'
 
 describe('<Auth />', () => {
   it('should render logos, title, subtitle and children', () => {
-    renderWithTheme(<Auth title="Sign In">children</Auth>)
+    render(<Auth title="Sign In">children</Auth>)
 
     expect(
       screen.getByRole('heading', { name: /sign in/i })

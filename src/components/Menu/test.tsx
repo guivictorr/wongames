@@ -1,5 +1,4 @@
-import { fireEvent, screen } from '@testing-library/react'
-import { renderWithTheme } from 'utils/tests/helpers'
+import { screen, render, fireEvent } from 'utils/test-utils'
 
 import Menu from '.'
 
@@ -10,7 +9,7 @@ jest.mock('components/CartDropdown', () => ({
 
 describe('<Menu />', () => {
   it('should render the menu', () => {
-    const { container } = renderWithTheme(<Menu />)
+    const { container } = render(<Menu />)
 
     expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument()
     expect(screen.getByLabelText(/search/i)).toBeInTheDocument()
@@ -20,7 +19,7 @@ describe('<Menu />', () => {
   })
 
   it('should handle the open/close mobile menu', () => {
-    renderWithTheme(<Menu />)
+    render(<Menu />)
 
     const fullMenuElement = screen.getByRole('navigation', { hidden: true })
     expect(fullMenuElement.getAttribute('aria-hidden')).toBe('true')
@@ -42,7 +41,7 @@ describe('<Menu />', () => {
   })
 
   it('should show register box when logged out', () => {
-    renderWithTheme(<Menu />)
+    render(<Menu />)
 
     expect(screen.queryByText(/my account/i)).not.toBeInTheDocument()
     expect(screen.queryByText('Wishlist')).not.toBeInTheDocument()
@@ -51,7 +50,7 @@ describe('<Menu />', () => {
   })
 
   it('should show wishlist and account when logged in', () => {
-    renderWithTheme(<Menu username="Test" />)
+    render(<Menu username="Test" />)
 
     expect(screen.getByText(/my account/i)).toBeInTheDocument()
     expect(screen.getByText('Wishlist')).toBeInTheDocument()

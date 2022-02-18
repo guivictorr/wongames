@@ -26,7 +26,7 @@ describe('<TextField />', () => {
     const onInput = jest.fn()
     render(
       <TextField
-        onInput={onInput}
+        onInputChange={onInput}
         label="Label"
         name="textfield"
         id="textfield"
@@ -78,7 +78,7 @@ describe('<TextField />', () => {
     const onInput = jest.fn()
     render(
       <TextField
-        onInput={onInput}
+        onInputChange={onInput}
         label="Label"
         name="textfield"
         id="textfield"

@@ -64,6 +64,7 @@ const Games = ({ filterItems }: GamesProps) => {
             <Grid>
               {data?.games.map((game) => (
                 <GameCard
+                  id={game.id}
                   key={game.slug}
                   developer={game.developers[0].name}
                   img={`http://localhost:1337${game.cover?.url}`}

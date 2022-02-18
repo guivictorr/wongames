@@ -7,6 +7,7 @@ import highlightMock from 'components/Highlight/mock'
 import Showcase from '.'
 
 const props = {
+  id: '1',
   heading: 'Heading',
   highlight: highlightMock,
   gameCardSliderItems: cardSliderMock.slice(0, 1)

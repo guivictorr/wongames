@@ -11,7 +11,7 @@ import {
 } from 'graphql/generated/QueryGamesBySlug'
 import { QUERY_RECOMMENDED } from 'graphql/queries/recommended'
 import { QueryRecommended } from 'graphql/generated/QueryRecommended'
-import { gameSliderMapper, highlightMapper } from 'utils/mappers/mapper'
+import { gameSliderMapper, highlightMapper } from 'utils/mappers'
 import { QUERY_UPCOMING } from 'graphql/queries/upcoming'
 import {
   QueryUpcoming,

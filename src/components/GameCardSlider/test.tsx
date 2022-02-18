@@ -7,6 +7,7 @@ import GameCardSlider from '.'
 
 const items = [
   {
+    id: '1',
     title: 'Population Zero',
     developer: 'Rockstar Games',
     img: 'https://source.unsplash.com/user/willianjusten/300x140',
@@ -15,6 +16,7 @@ const items = [
     slug: 'population-zero'
   },
   {
+    id: '2',
     title: 'Population Zero',
     developer: 'Rockstar Games',
     img: 'https://source.unsplash.com/user/willianjusten/300x141',
@@ -23,6 +25,7 @@ const items = [
     slug: 'population-zero'
   },
   {
+    id: '3',
     title: 'Population Zero',
     developer: 'Rockstar Games',
     img: 'https://source.unsplash.com/user/willianjusten/300x142',
@@ -31,6 +34,7 @@ const items = [
     slug: 'population-zero'
   },
   {
+    id: '4',
     title: 'Population Zero',
     developer: 'Rockstar Games',
     img: 'https://source.unsplash.com/user/willianjusten/300x143',
@@ -39,6 +43,7 @@ const items = [
     slug: 'population-zero'
   },
   {
+    id: '5',
     title: 'Population Zero',
     developer: 'Rockstar Games',
     img: 'https://source.unsplash.com/user/willianjusten/300x144',

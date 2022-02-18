@@ -1,5 +1,6 @@
 export default [
   {
+    id: '1',
     title: 'Population Zero',
     developer: 'Rockstar Games',
     img: 'https://source.unsplash.com/user/willianjusten/300x140',
@@ -8,6 +9,7 @@ export default [
     slug: 'population-zero'
   },
   {
+    id: '2',
     title: 'Population Zero',
     developer: 'Rockstar Games',
     img: 'https://source.unsplash.com/user/willianjusten/300x141',
@@ -16,6 +18,7 @@ export default [
     slug: 'population-zero'
   },
   {
+    id: '3',
     title: 'Population Zero',
     developer: 'Rockstar Games',
     img: 'https://source.unsplash.com/user/willianjusten/300x142',
@@ -24,6 +27,7 @@ export default [
     slug: 'population-zero'
   },
   {
+    id: '4',
     title: 'Population Zero',
     developer: 'Rockstar Games',
     img: 'https://source.unsplash.com/user/willianjusten/300x143',
@@ -32,6 +36,7 @@ export default [
     slug: 'population-zero'
   },
   {
+    id: '5',
     title: 'Population Zero',
     developer: 'Rockstar Games',
     img: 'https://source.unsplash.com/user/willianjusten/300x144',
@@ -40,6 +45,7 @@ export default [
     slug: 'population-zero'
   },
   {
+    id: '6',
     title: 'Population Zero',
     developer: 'Rockstar Games',
     img: 'https://source.unsplash.com/user/willianjusten/300x145',

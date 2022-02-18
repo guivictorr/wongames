@@ -34,4 +34,14 @@ describe('<CartList />', () => {
     render(<CartList />)
     expect(screen.getByText(/your cart is empty/i)).toBeInTheDocument()
   })
+
+  it('should render loading', () => {
+    const cartProviderProps = {
+      ...CartContextDefaultValues,
+      loading: true
+    }
+
+    render(<CartList />, { cartProviderProps })
+    expect(screen.getByTitle(/loading/i)).toBeInTheDocument()
+  })
 })

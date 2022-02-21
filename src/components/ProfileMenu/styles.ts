@@ -28,6 +28,7 @@ const linkModifiers = {
 
 export const Link = styled.a<{ isActive: boolean }>`
   ${({ theme, isActive }) => css`
+    cursor: pointer;
     ${isActive ? linkModifiers.active(theme) : linkModifiers.default(theme)}
     text-decoration: none;
     display: flex;

@@ -2,6 +2,9 @@ import { screen, render } from 'utils/test-utils'
 
 import Base from '.'
 
+jest.mock('next-auth/client', () => ({
+  useSession: jest.fn(() => [{ session: null }])
+}))
 jest.mock('components/Footer', () => ({
   __esModule: true,
   default: () => <div data-testid="Footer mock" />

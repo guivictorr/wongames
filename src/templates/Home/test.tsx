@@ -23,6 +23,12 @@ const props: HomeTemplateProps = {
   upcomingGamesTitle: 'Upcoming'
 }
 
+jest.mock('templates/Base', () => ({
+  __esModule: true,
+  default: ({ children }: { children: React.ReactNode }) => (
+    <div data-testid="Base mock">{children}</div>
+  )
+}))
 jest.mock('components/Showcase', () => ({
   __esModule: true,
   default: () => <div data-testid="Showcase mock" />

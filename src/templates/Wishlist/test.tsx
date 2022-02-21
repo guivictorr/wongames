@@ -13,13 +13,15 @@ const props: WishlistTemplateProps = {
   recommendedTitle: 'Recommended for you'
 }
 
+jest.mock('templates/Base', () => ({
+  __esModule: true,
+  default: ({ children }: { children: React.ReactNode }) => (
+    <div data-testid="Base mock">{children}</div>
+  )
+}))
 jest.mock('components/Showcase', () => ({
   __esModule: true,
   default: () => <div data-testid="Showcase mock" />
-}))
-jest.mock('components/Menu', () => ({
-  __esModule: true,
-  default: () => <div data-testid="Menu mock" />
 }))
 
 describe('<Home />', () => {
@@ -31,7 +33,6 @@ describe('<Home />', () => {
     ).toBeInTheDocument()
     expect(screen.getByTestId('Showcase mock')).toBeInTheDocument()
     expect(screen.getAllByText(/population zero/i)).toHaveLength(6)
-    expect(screen.getByTestId('Menu mock')).toBeInTheDocument()
   })
 
   it('should render empty when there are no games', () => {

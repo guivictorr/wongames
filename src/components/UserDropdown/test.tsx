@@ -5,9 +5,10 @@ import UserDropdown from '.'
 
 describe('<UserDropdown />', () => {
   it('should render the username', () => {
-    render(<UserDropdown username="Jorge" />)
+    const { container } = render(<UserDropdown username="Jorge" />)
 
     expect(screen.getByText('Jorge')).toBeInTheDocument()
+    expect(container.firstChild).toMatchSnapshot()
   })
 
   it('should render the menu', () => {
@@ -21,7 +22,9 @@ describe('<UserDropdown />', () => {
     expect(
       screen.getByRole('link', { name: /my wishlist/i })
     ).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /sign out/i })).toBeInTheDocument()
-    expect(screen.getAllByRole('link')).toHaveLength(3)
+    expect(
+      screen.getByRole('button', { name: /sign out/i })
+    ).toBeInTheDocument()
+    expect(screen.getAllByRole('link')).toHaveLength(2)
   })
 })

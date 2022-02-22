@@ -20,7 +20,7 @@ const FormSignIn = () => {
     password: ''
   })
   const [loading, setLoading] = useState(false)
-  const { push } = useRouter()
+  const { push, query } = useRouter()
 
   const handleInput = (field: string, value: string) => {
     setValues((prevState) => ({ ...prevState, [field]: value }))
@@ -47,7 +47,7 @@ const FormSignIn = () => {
     const result = await signIn('credentials', {
       ...values,
       redirect: false,
-      callbackUrl: '/'
+      callbackUrl: `${window.location.origin}${query.callbackUrl || ''}`
     })
 
     if (result?.url) {

@@ -1,18 +1,32 @@
 import { ApolloClient, HttpLink, NormalizedCacheObject } from '@apollo/client'
 import { useMemo } from 'react'
+import { setContext } from '@apollo/client/link/context'
 import apolloCache from './cache'
+import { Session } from 'next-auth'
 let apolloClient: ApolloClient<NormalizedCacheObject | null>
 
-function createApolloClient() {
+function createApolloClient(session?: Session | null) {
+  const httpLink = new HttpLink({
+    uri: `${process.env.NEXT_PUBLIC_API_URL}/graphql`
+  })
+
+  const authorization = setContext((_, { headers }) => {
+    const authorization = session?.jwt ? `Bearer ${session?.jwt}` : ''
+    return { headers: { ...headers, authorization } }
+  })
+
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
-    link: new HttpLink({ uri: 'http://localhost:1337/graphql' }),
+    link: authorization.concat(httpLink),
     cache: apolloCache
   })
 }
 
-export function initializeApollo(initialState = null) {
-  const apolloClientGlobal = apolloClient ?? createApolloClient()
+export function initializeApollo(
+  initialState = null,
+  session?: Session | null
+) {
+  const apolloClientGlobal = apolloClient ?? createApolloClient(session)
 
   if (initialState) {
     apolloClientGlobal.cache.restore(initialState)
@@ -25,6 +39,9 @@ export function initializeApollo(initialState = null) {
   return apolloClientGlobal
 }
 
-export function useApollo(initialState = null) {
-  return useMemo(() => initializeApollo(initialState), [initialState])
+export function useApollo(initialState = null, session?: Session | null) {
+  return useMemo(
+    () => initializeApollo(initialState, session),
+    [initialState, session]
+  )
 }

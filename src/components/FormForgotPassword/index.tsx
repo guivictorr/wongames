@@ -1,20 +1,23 @@
 import Button from 'components/Button'
-import { FormError, FormLoading, FormWrapper } from 'components/Form'
+import {
+  FormError,
+  FormLoading,
+  FormSuccess,
+  FormWrapper
+} from 'components/Form'
 import TextField from 'components/TextField'
-import { signIn } from 'next-auth/client'
-import { useRouter } from 'next/router'
 import { FormEvent, useState } from 'react'
-import { Email } from 'styled-icons/material-outlined'
+import { CheckCircleOutline, Email } from 'styled-icons/material-outlined'
 import { FieldErrors, forgotValidate } from 'utils/validators'
 
 const FormForgotPassword = () => {
+  const [success, setSuccess] = useState(false)
   const [formError, setFormError] = useState('')
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({})
   const [values, setValues] = useState({
     identifier: ''
   })
   const [loading, setLoading] = useState(false)
-  const { push, query } = useRouter()
 
   const handleInput = (field: string, value: string) => {
     setValues((prevState) => ({ ...prevState, [field]: value }))
@@ -35,36 +38,51 @@ const FormForgotPassword = () => {
 
     setFieldErrors({})
 
-    const result = await signIn('credentials', {
-      ...values,
-      redirect: false,
-      callbackUrl: `${window.location.origin}${query.callbackUrl || ''}`
-    })
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/auth/forgot-password`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email: values.identifier })
+      }
+    )
 
-    if (result?.url) {
-      return push(result.url)
-    }
-
+    const data = await response.json()
     setLoading(false)
 
-    setFormError('username or password is invalid')
+    if (data.error) {
+      setFormError(data.message[0].messages[0].message)
+    } else {
+      setSuccess(true)
+    }
   }
   return (
     <FormWrapper>
-      {!!formError && <FormError>{formError}</FormError>}
-      <form onSubmit={handleSubmit}>
-        <TextField
-          name="email"
-          placeholder="Email"
-          type="email"
-          error={fieldErrors?.email}
-          onInputChange={(value) => handleInput('identifier', value)}
-          icon={<Email />}
-        />
-        <Button type="submit" size="large" fullWidth disabled={loading}>
-          {loading ? <FormLoading /> : 'Send email'}
-        </Button>
-      </form>
+      {success ? (
+        <FormSuccess>
+          <CheckCircleOutline />
+          You just received an email!
+        </FormSuccess>
+      ) : (
+        <>
+          {!!formError && <FormError>{formError}</FormError>}
+          <form onSubmit={handleSubmit}>
+            <TextField
+              name="email"
+              placeholder="Email"
+              type="text"
+              error={fieldErrors?.email}
+              onInputChange={(value) => handleInput('identifier', value)}
+              icon={<Email />}
+            />
+            <Button type="submit" size="large" fullWidth disabled={loading}>
+              {loading ? <FormLoading /> : 'Send email'}
+            </Button>
+          </form>
+        </>
+      )}
     </FormWrapper>
   )
 }

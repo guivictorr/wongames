@@ -1,7 +1,7 @@
+import * as ButtonStyles from 'components/Button/styles'
+import * as TextFieldStyles from 'components/TextField/styles'
 import { darken } from 'polished'
 import styled, { css } from 'styled-components'
-import * as TextFieldStyles from 'components/TextField/styles'
-import * as ButtonStyles from 'components/Button/styles'
 
 export const FormError = styled.div`
   ${({ theme }) => css`
@@ -46,6 +46,18 @@ export const FormLink = styled.div`
         color: ${darken(0.1, theme.colors.secondary)};
         border-bottom: 0.1rem solid ${darken(0.1, theme.colors.secondary)};
       }
+    }
+  `}
+`
+
+export const FormSuccess = styled.p`
+  ${({ theme }) => css`
+    text-align: center;
+    color: ${theme.colors.black};
+    font-size: ${theme.font.sizes.small};
+    svg {
+      color: ${theme.colors.secondary};
+      width: 2.4rem;
     }
   `}
 `

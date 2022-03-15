@@ -5,14 +5,14 @@ import { signIn } from 'next-auth/client'
 import { useRouter } from 'next/router'
 import { FormEvent, useState } from 'react'
 import { Lock } from 'styled-icons/material-outlined'
-import { FieldErrors } from 'utils/validators'
+import { FieldErrors, resetValidate } from 'utils/validators'
 
 const FormResetPassword = () => {
   const [formError, setFormError] = useState('')
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({})
   const [values, setValues] = useState({
     password: '',
-    confirmPassword: ''
+    confirm_password: ''
   })
   const [loading, setLoading] = useState(false)
   const { push, query } = useRouter()
@@ -26,7 +26,7 @@ const FormResetPassword = () => {
     setLoading(true)
     setFormError('')
 
-    const errors = {} // validate after
+    const errors = resetValidate(values)
 
     if (Object.keys(errors).length) {
       setFieldErrors(errors)

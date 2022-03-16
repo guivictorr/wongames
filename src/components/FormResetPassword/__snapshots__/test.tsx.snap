@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<FormResetPassword /> should render the form 1`] = `
+.c4 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
 .c7 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -84,12 +90,6 @@ exports[`<FormResetPassword /> should render the form 1`] = `
 
 .c0 .c6 {
   margin: 3.2rem auto 1.6rem;
-}
-
-.c4 {
-  display: inline-block;
-  vertical-align: middle;
-  overflow: hidden;
 }
 
 <main

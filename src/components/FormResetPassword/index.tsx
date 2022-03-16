@@ -1,10 +1,10 @@
-import Button from 'components/Button'
-import { FormError, FormLoading, FormWrapper } from 'components/Form'
-import TextField from 'components/TextField'
-import { signIn } from 'next-auth/client'
 import { useRouter } from 'next/router'
 import { FormEvent, useState } from 'react'
 import { Lock } from 'styled-icons/material-outlined'
+
+import Button from 'components/Button'
+import { FormError, FormLoading, FormWrapper } from 'components/Form'
+import TextField from 'components/TextField'
 import { FieldErrors, resetValidate } from 'utils/validators'
 
 const FormResetPassword = () => {
@@ -15,7 +15,7 @@ const FormResetPassword = () => {
     confirm_password: ''
   })
   const [loading, setLoading] = useState(false)
-  const { push, query } = useRouter()
+  const { query, push } = useRouter()
 
   const handleInput = (field: string, value: string) => {
     setValues((prevState) => ({ ...prevState, [field]: value }))
@@ -36,19 +36,29 @@ const FormResetPassword = () => {
 
     setFieldErrors({})
 
-    const result = await signIn('credentials', {
-      ...values,
-      redirect: false,
-      callbackUrl: `${window.location.origin}${query.callbackUrl || ''}`
-    })
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/auth/reset-password`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          code: query.code,
+          password: values.password,
+          passwordConfirmation: values.confirm_password
+        })
+      }
+    )
 
-    if (result?.url) {
-      return push(result.url)
-    }
-
+    const data = await response.json()
     setLoading(false)
 
-    setFormError('username or password is invalid')
+    if (data.error) {
+      setFormError(data.message[0].messages[0].message)
+    } else {
+      push('/sign-in')
+    }
   }
   return (
     <FormWrapper>

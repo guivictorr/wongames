@@ -63,7 +63,11 @@ const FormSignUp = () => {
 
     createUser({
       variables: {
-        input: values
+        input: {
+          email: values.email,
+          password: values.password,
+          username: values.username
+        }
       }
     })
   }

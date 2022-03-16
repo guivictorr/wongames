@@ -6,16 +6,18 @@ import {
   FormWrapper
 } from 'components/Form'
 import TextField from 'components/TextField'
+import { useRouter } from 'next/router'
 import { FormEvent, useState } from 'react'
 import { CheckCircleOutline, Email } from 'styled-icons/material-outlined'
 import { FieldErrors, forgotValidate } from 'utils/validators'
 
 const FormForgotPassword = () => {
+  const { query } = useRouter()
   const [success, setSuccess] = useState(false)
   const [formError, setFormError] = useState('')
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({})
   const [values, setValues] = useState({
-    identifier: ''
+    identifier: (query.email as string) || ''
   })
   const [loading, setLoading] = useState(false)
 
@@ -73,6 +75,7 @@ const FormForgotPassword = () => {
               name="email"
               placeholder="Email"
               type="text"
+              initialValue={query.email as string}
               error={fieldErrors?.email}
               onInputChange={(value) => handleInput('identifier', value)}
               icon={<Email />}

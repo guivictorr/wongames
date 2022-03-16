@@ -2,7 +2,7 @@ import { render, screen } from 'utils/test-utils'
 import FormForgotPassword from '.'
 
 jest.mock('next/router', () => ({
-  useRouter: jest.fn(() => ({ push: jest.fn() }))
+  useRouter: jest.fn(() => ({ push: jest.fn(), query: { email: 'email' } }))
 }))
 
 describe('<FormForgotPassword />', () => {

@@ -127,7 +127,7 @@ exports[`<FormForgotPassword /> should render the form 1`] = `
           name="email"
           placeholder="Email"
           type="text"
-          value=""
+          value="email"
         />
       </div>
     </div>

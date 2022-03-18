@@ -1,4 +1,4 @@
-global.fetch = require('node-fetch')
+import 'whatwg-fetch'
 import { server } from '../src/utils/mockServer/server'
 
 beforeAll(() => {

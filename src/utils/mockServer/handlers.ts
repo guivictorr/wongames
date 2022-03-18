@@ -2,7 +2,6 @@ import { rest } from 'msw'
 
 type LoginReqBody = {
   email: string
-  password: string
 }
 
 export const handlers = [
@@ -20,7 +19,7 @@ export const handlers = [
               {
                 messages: [
                   {
-                    message: 'This email does not exist '
+                    message: 'This email does not exist'
                   }
                 ]
               }

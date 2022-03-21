@@ -15,10 +15,24 @@ export interface MutationCreateWishlist_createWishlist_wishlist_user {
   username: string;
 }
 
+export interface MutationCreateWishlist_createWishlist_wishlist_games_developers {
+  __typename: "Developer";
+  name: string;
+}
+
+export interface MutationCreateWishlist_createWishlist_wishlist_games_cover {
+  __typename: "UploadFile";
+  url: string;
+}
+
 export interface MutationCreateWishlist_createWishlist_wishlist_games {
   __typename: "Game";
   id: string;
   name: string;
+  slug: string;
+  price: number;
+  developers: MutationCreateWishlist_createWishlist_wishlist_games_developers[];
+  cover: MutationCreateWishlist_createWishlist_wishlist_games_cover | null;
 }
 
 export interface MutationCreateWishlist_createWishlist_wishlist {

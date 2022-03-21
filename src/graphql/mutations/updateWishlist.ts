@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client'
 
-export const UPDATE_WISHLIST = gql`
+export const MUTATION_UPDATE_WISHLIST = gql`
   mutation MutationUpdateWishlistt($input: updateWishlistInput!) {
     updateWishlist(input: $input) {
       wishlist {

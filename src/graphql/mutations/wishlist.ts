@@ -1,4 +1,5 @@
 import { gql } from '@apollo/client'
+import { GameSliderFragment } from 'graphql/fragments/game'
 
 export const MUTATION_UPDATE_WISHLIST = gql`
   mutation MutationUpdateWishlistt($input: updateWishlistInput!) {
@@ -6,13 +7,12 @@ export const MUTATION_UPDATE_WISHLIST = gql`
       wishlist {
         id
         games {
-          id
-          name
-          slug
+          ...GameSliderFragment
         }
       }
     }
   }
+  ${GameSliderFragment}
 `
 
 export const MUTATION_CREATE_WISHLIST = gql`
@@ -25,11 +25,10 @@ export const MUTATION_CREATE_WISHLIST = gql`
           username
         }
         games {
-          id
-          name
-          slug
+          ...GameSliderFragment
         }
       }
     }
   }
+  ${GameSliderFragment}
 `

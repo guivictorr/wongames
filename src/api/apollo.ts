@@ -10,8 +10,9 @@ function createApolloClient(session?: Session | null) {
     uri: `${process.env.NEXT_PUBLIC_API_URL}/graphql`
   })
 
-  const authorization = setContext((_, { headers }) => {
-    const authorization = session?.jwt ? `Bearer ${session?.jwt}` : ''
+  const authorization = setContext((_, { headers, session: clientSession }) => {
+    const jwt = session?.jwt || clientSession?.jwt || ''
+    const authorization = jwt ? `Bearer ${session?.jwt}` : ''
     return { headers: { ...headers, authorization } }
   })
 

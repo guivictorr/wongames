@@ -10,6 +10,7 @@ import { CartProvider } from 'hooks/useCart'
 
 import GlobalStyles from 'styles/global'
 import theme from 'styles/theme'
+import { WishlistProvider } from 'hooks/useWishlist'
 
 function App({ Component, pageProps }: AppProps) {
   const client = useApollo(pageProps.initialApolloState)
@@ -17,29 +18,31 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <AuthProvider session={pageProps.session}>
       <ApolloProvider client={client}>
-        <CartProvider>
-          <ThemeProvider theme={theme}>
-            <Head>
-              <title>React Avançado - Boilerplate</title>
-              <link rel="shortcut icon" href="/img/icon-512.png" />
-              <link rel="apple-touch-icon" href="/img/icon-512.png" />
-              <link rel="manifest" href="/manifest.json" />
-              <meta name="theme-color" content="#06092B" />
-              <meta
-                name="description"
-                content="A simple project starter to work with TypeScript, React, NextJS and Styled Components"
+        <WishlistProvider>
+          <CartProvider>
+            <ThemeProvider theme={theme}>
+              <Head>
+                <title>React Avançado - Boilerplate</title>
+                <link rel="shortcut icon" href="/img/icon-512.png" />
+                <link rel="apple-touch-icon" href="/img/icon-512.png" />
+                <link rel="manifest" href="/manifest.json" />
+                <meta name="theme-color" content="#06092B" />
+                <meta
+                  name="description"
+                  content="A simple project starter to work with TypeScript, React, NextJS and Styled Components"
+                />
+              </Head>
+              <GlobalStyles />
+              <ProgressBar
+                color={theme.colors.primary}
+                startPosition={0.3}
+                height={5}
+                stopDelayMs={200}
               />
-            </Head>
-            <GlobalStyles />
-            <ProgressBar
-              color={theme.colors.primary}
-              startPosition={0.3}
-              height={5}
-              stopDelayMs={200}
-            />
-            <Component {...pageProps} />
-          </ThemeProvider>
-        </CartProvider>
+              <Component {...pageProps} />
+            </ThemeProvider>
+          </CartProvider>
+        </WishlistProvider>
       </ApolloProvider>
     </AuthProvider>
   )

@@ -22,7 +22,7 @@ export type WishlistContextData = {
   items: GameCardProps[]
   isInWishlist: (id: string) => boolean
   addToWishlist: (id: string) => void
-  // removeFromWishlist: (id: string) => void
+  removeFromWishlist: (id: string) => void
   loading: boolean
 }
 
@@ -107,9 +107,21 @@ export const WishlistProvider = ({ children }: WishlistProviderProps) => {
       }
     })
   }
-  // const removeFromWishlist = (id: string) => {
-  //   return id
-  // }
+
+  const removeFromWishlist = (id: string) => {
+    if (wishlistId) {
+      updateList({
+        variables: {
+          input: {
+            where: { id: wishlistId },
+            data: {
+              games: wishlistIds.filter((gameId) => gameId !== id)
+            }
+          }
+        }
+      })
+    }
+  }
 
   return (
     <WishlistContext.Provider
@@ -117,7 +129,7 @@ export const WishlistProvider = ({ children }: WishlistProviderProps) => {
         items: gameSliderMapper(wishlistItems),
         addToWishlist,
         isInWishlist,
-        // removeFromWishlist,
+        removeFromWishlist,
         loading
       }}
     >

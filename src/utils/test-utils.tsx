@@ -7,23 +7,28 @@ import {
   CartContextData
 } from 'hooks/useCart'
 import theme from 'styles/theme'
+import { WishlistContext, WishlistContextData } from 'hooks/useWishlist'
 
 type CustomRenderProps = {
   cartProviderProps?: CartContextData
+  wishlistProviderProps?: WishlistContextData
 } & Omit<RenderOptions, 'queries'>
 
 const customRender = (
   ui: ReactElement,
   {
     cartProviderProps = CartContextDefaultValues,
+    wishlistProviderProps,
     ...renderOptions
   }: CustomRenderProps = {}
 ) => {
   return render(
     <ThemeProvider theme={theme}>
-      <CartContext.Provider value={cartProviderProps}>
-        {ui}
-      </CartContext.Provider>
+      <WishlistContext.Provider value={wishlistProviderProps}>
+        <CartContext.Provider value={cartProviderProps}>
+          {ui}
+        </CartContext.Provider>
+      </WishlistContext.Provider>
     </ThemeProvider>,
     renderOptions
   )

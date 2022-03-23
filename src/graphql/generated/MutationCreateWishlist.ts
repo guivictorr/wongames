@@ -9,12 +9,6 @@ import { createWishlistInput } from "./globalTypes";
 // GraphQL mutation operation: MutationCreateWishlist
 // ====================================================
 
-export interface MutationCreateWishlist_createWishlist_wishlist_user {
-  __typename: "UsersPermissionsUser";
-  id: string;
-  username: string;
-}
-
 export interface MutationCreateWishlist_createWishlist_wishlist_games_developers {
   __typename: "Developer";
   name: string;
@@ -38,7 +32,6 @@ export interface MutationCreateWishlist_createWishlist_wishlist_games {
 export interface MutationCreateWishlist_createWishlist_wishlist {
   __typename: "Wishlist";
   id: string;
-  user: MutationCreateWishlist_createWishlist_wishlist_user | null;
   games: MutationCreateWishlist_createWishlist_wishlist_games[];
 }
 

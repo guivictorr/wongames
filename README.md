@@ -1,5 +1,11 @@
+<h1 align='center'>🚧 Under construction 🚧</h1>
+
 <h1 align='center'>Won games 🎮</h1>
 <p align='center'>Wongames is a project developed during a course called Advanced React which we learn a lot about front-end concepts like, accessibility, unit tests, integration tests, creation of good components, etc. In this repo you can view all the code developed during the course.  </p>
+
+<div align='center'>
+  <img src="https://user-images.githubusercontent.com/55333929/159386892-26e49172-e3ad-497e-95d4-49681bc702be.png">
+</div>
 
 ## 💄 Layout
 - [Layout](https://www.figma.com/file/xwqB4b2hX8yPmp66vRuHLz/Won-Games---Em-Andamento!!?node-id=139%3A0)

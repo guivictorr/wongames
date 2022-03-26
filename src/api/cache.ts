@@ -7,6 +7,15 @@ const apolloCache = new InMemoryCache({
       fields: {
         games: concatPagination(['where', 'sort'])
       }
+    },
+    Wishlist: {
+      fields: {
+        games: {
+          merge(_, icoming) {
+            return icoming
+          }
+        }
+      }
     }
   }
 })

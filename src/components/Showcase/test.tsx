@@ -1,4 +1,5 @@
 import 'match-media-mock'
+import 'session.mock.ts'
 import { screen, render } from 'utils/test-utils'
 
 import cardSliderMock from 'components/GameCardSlider/mock'

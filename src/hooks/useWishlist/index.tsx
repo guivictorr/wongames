@@ -57,7 +57,7 @@ export const WishlistProvider = ({ children }: WishlistProviderProps) => {
     }
   })
 
-  const [createList] = useMutation<
+  const [createList, { loading: loadingCreate }] = useMutation<
     MutationCreateWishlist,
     MutationCreateWishlistVariables
   >(MUTATION_CREATE_WISHLIST, {
@@ -67,7 +67,7 @@ export const WishlistProvider = ({ children }: WishlistProviderProps) => {
       setWishlistId(data?.createWishlist?.wishlist?.id)
     }
   })
-  const [updateList] = useMutation<
+  const [updateList, { loading: loadingUpdate }] = useMutation<
     MutationUpdateWishlistt,
     MutationUpdateWishlisttVariables
   >(MUTATION_UPDATE_WISHLIST, {
@@ -118,7 +118,7 @@ export const WishlistProvider = ({ children }: WishlistProviderProps) => {
 
   const removeFromWishlist = (id: string) => {
     if (wishlistId) {
-      updateList({
+      return updateList({
         variables: {
           input: {
             where: { id: wishlistId },
@@ -138,7 +138,7 @@ export const WishlistProvider = ({ children }: WishlistProviderProps) => {
         addToWishlist,
         isInWishlist,
         removeFromWishlist,
-        loading
+        loading: loadingCreate || loadingUpdate || loading
       }}
     >
       {children}

@@ -1,3 +1,4 @@
+import 'session.mock.ts'
 import { screen, render } from 'utils/test-utils'
 
 import GameInfo from '.'
@@ -22,6 +23,11 @@ describe('<GameInfo />', () => {
 
   it('should render buttons', () => {
     render(<GameInfo {...props} />)
-    expect(screen.getAllByRole('button')).toHaveLength(2)
+    expect(
+      screen.getByRole('button', { name: /add to cart/i })
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('button', { name: /add to wishlist/i })
+    ).toBeInTheDocument()
   })
 })

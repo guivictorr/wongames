@@ -26,8 +26,16 @@ export type WishlistContextData = {
   loading: boolean
 }
 
-export const WishlistContext = createContext<WishlistContextData | undefined>(
-  undefined
+export const WishlistContextDefaultValues: WishlistContextData = {
+  items: [],
+  isInWishlist: () => false,
+  addToWishlist: () => false,
+  removeFromWishlist: () => false,
+  loading: false
+}
+
+export const WishlistContext = createContext<WishlistContextData>(
+  WishlistContextDefaultValues
 )
 
 export type WishlistProviderProps = {
@@ -138,12 +146,4 @@ export const WishlistProvider = ({ children }: WishlistProviderProps) => {
   )
 }
 
-export const useWishlist = () => {
-  const context = useContext(WishlistContext)
-
-  if (context === undefined) {
-    throw new Error(`useWishlist must be used within a WishlistProvider`)
-  }
-
-  return context
-}
+export const useWishlist = () => useContext(WishlistContext)

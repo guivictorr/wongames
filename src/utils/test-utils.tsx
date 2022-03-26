@@ -7,7 +7,11 @@ import {
   CartContextData
 } from 'hooks/useCart'
 import theme from 'styles/theme'
-import { WishlistContext, WishlistContextData } from 'hooks/useWishlist'
+import {
+  WishlistContext,
+  WishlistContextData,
+  WishlistContextDefaultValues
+} from 'hooks/useWishlist'
 
 type CustomRenderProps = {
   cartProviderProps?: CartContextData
@@ -18,7 +22,7 @@ const customRender = (
   ui: ReactElement,
   {
     cartProviderProps = CartContextDefaultValues,
-    wishlistProviderProps,
+    wishlistProviderProps = WishlistContextDefaultValues,
     ...renderOptions
   }: CustomRenderProps = {}
 ) => {

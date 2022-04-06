@@ -28,21 +28,6 @@ export const Footer = styled.div`
   `}
 `
 
-export const CardsList = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-
-export const CardInfo = styled.span`
-  ${({ theme }) => css`
-    display: flex;
-    align-items: center;
-    img {
-      margin-right: ${theme.spacings.xxsmall};
-    }
-  `}
-`
-
 const ItemStyles = (theme: DefaultTheme) => css`
   background: ${theme.colors.lightGray};
   border-radius: 0.2rem;
@@ -52,16 +37,6 @@ const ItemStyles = (theme: DefaultTheme) => css`
   cursor: pointer;
   display: flex;
   align-items: center;
-`
-
-export const CardItem = styled.label`
-  ${({ theme }) => css`
-    ${ItemStyles(theme)};
-    justify-content: space-between;
-    &:not(:last-child) {
-      margin-bottom: ${theme.spacings.xxsmall};
-    }
-  `}
 `
 
 export const AddCard = styled.div`

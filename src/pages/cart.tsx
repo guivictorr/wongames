@@ -1,8 +1,6 @@
 import { GetServerSideProps } from 'next'
 import Cart, { CartProps } from 'templates/Cart'
 
-import cartItems from 'components/CartList/mock'
-import cards from 'components/PaymentOptions/mock'
 import { QUERY_RECOMMENDED } from 'graphql/queries/recommended'
 import { QueryRecommended } from 'graphql/generated/QueryRecommended'
 import { initializeApollo } from 'api/apollo'
@@ -23,9 +21,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return {
     props: {
       session,
-      cards,
-      items: cartItems,
-      total: '$ 430,00',
       recommendedTitle: data.recommended && data.recommended.section?.title,
       recommendedGames: gameSliderMapper(data?.recommended?.section?.games),
       recommendedHighlight: highlightMapper(

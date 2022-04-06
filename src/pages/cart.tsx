@@ -13,13 +13,15 @@ function CartPage(props: CartProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const apolloClient = initializeApollo()
+  const session = await protectedRoutes()
+  const apolloClient = initializeApollo(null, session)
   const { data } = await apolloClient.query<QueryRecommended>({
     query: QUERY_RECOMMENDED
   })
 
   return {
     props: {
+      session,
       cards,
       items: cartItems,
       total: '$ 430,00',

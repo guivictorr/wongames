@@ -28,6 +28,8 @@
   },
   "dependencies": {
     "@apollo/client": "^3.5.8",
+    "@stripe/react-stripe-js": "^1.7.0",
+    "@stripe/stripe-js": "^1.26.0",
     "@types/lodash.xor": "^4.5.6",
     "graphql": "^15.5.1",
     "joi": "^17.6.0",

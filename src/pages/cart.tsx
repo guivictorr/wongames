@@ -7,13 +7,14 @@ import { QUERY_RECOMMENDED } from 'graphql/queries/recommended'
 import { QueryRecommended } from 'graphql/generated/QueryRecommended'
 import { initializeApollo } from 'api/apollo'
 import { gameSliderMapper, highlightMapper } from 'utils/mappers'
+import protectedRoutes from 'utils/protected-routes'
 
 function CartPage(props: CartProps) {
   return <Cart {...props} />
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const session = await protectedRoutes()
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const session = await protectedRoutes(context)
   const apolloClient = initializeApollo(null, session)
   const { data } = await apolloClient.query<QueryRecommended>({
     query: QUERY_RECOMMENDED

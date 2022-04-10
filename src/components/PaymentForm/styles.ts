@@ -59,3 +59,9 @@ export const Error = styled.p`
     align-items: center;
   `}
 `
+
+export const FreeGames = styled.p`
+  ${({ theme }) => css`
+    color: ${theme.colors.black};
+  `}
+`

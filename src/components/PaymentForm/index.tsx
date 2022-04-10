@@ -1,10 +1,17 @@
 import { CardElement } from '@stripe/react-stripe-js'
+import { StripeCardElementChangeEvent } from '@stripe/stripe-js'
 import Button from 'components/Button'
 import Heading from 'components/Heading'
-import { ShoppingCart } from 'styled-icons/material-outlined'
+import { useState } from 'react'
+import { ErrorOutline, ShoppingCart } from 'styled-icons/material-outlined'
 import * as S from './styles'
 
 const PaymentForm = () => {
+  const [error, setError] = useState<string | null>(null)
+  const handleCardChange = async (event: StripeCardElementChangeEvent) => {
+    setError(event.error ? event.error.message : null)
+  }
+
   return (
     <S.Wrapper>
       <S.Body>
@@ -15,7 +22,14 @@ const PaymentForm = () => {
           options={{
             hidePostalCode: true
           }}
+          onChange={handleCardChange}
         />
+        {error && (
+          <S.Error>
+            <ErrorOutline size={23} />
+            {error}
+          </S.Error>
+        )}
       </S.Body>
       <S.Footer>
         <Button as="a" fullWidth minimal>

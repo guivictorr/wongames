@@ -1,5 +1,6 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js'
 import {
+  PaymentIntent,
   StripeCardElement,
   StripeCardElementChangeEvent
 } from '@stripe/stripe-js'
@@ -11,7 +12,7 @@ import { Session } from 'next-auth'
 import { useRouter } from 'next/router'
 import { FormEvent, useEffect, useState } from 'react'
 import { ErrorOutline, ShoppingCart } from 'styled-icons/material-outlined'
-import { createPaymentIntent } from 'utils/stripe/methods'
+import { createPayment, createPaymentIntent } from 'utils/stripe/methods'
 import * as S from './styles'
 
 type PaymentFormProps = {
@@ -41,6 +42,7 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
     if (!stripe || !elements) return
 
     if (freeGames) {
+      saveOrder()
       push('/success')
       return
     }
@@ -58,7 +60,18 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
       setError(null)
       setLoading(false)
       push('/success')
+      saveOrder(payload.paymentIntent)
     }
+  }
+
+  const saveOrder = async (paymentIntent?: PaymentIntent) => {
+    const { data } = await createPayment({
+      items,
+      paymentIntent,
+      token: session.jwt as string
+    })
+
+    return data
   }
 
   useEffect(() => {

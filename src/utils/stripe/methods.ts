@@ -38,7 +38,7 @@ export const createPaymentIntent = async ({
 
 type CreatePaymentParams = {
   items: CartItem[]
-  paymentIntent: PaymentIntent
+  paymentIntent?: PaymentIntent
   token: string
 }
 
@@ -50,8 +50,8 @@ export const createPayment = async ({
   return fetcher({
     body: JSON.stringify({
       cart: items,
-      paymentIntentId: paymentIntent.id,
-      paymentMethod: paymentIntent.payment_method
+      paymentIntentId: paymentIntent?.id,
+      paymentMethod: paymentIntent?.payment_method
     }),
     token,
     url: '/orders'

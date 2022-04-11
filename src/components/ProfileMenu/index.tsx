@@ -13,13 +13,13 @@ export type ProfileMenuProps = {
 
 const ProfileMenu = ({ activeLink }: ProfileMenuProps) => (
   <S.Nav>
-    <Link href="profile/me" passHref>
+    <Link href="/profile/me" passHref>
       <S.Link isActive={activeLink === '/profile/me'} title="My account">
         <AccountCircle size={24} />
         <span>My account</span>
       </S.Link>
     </Link>
-    <Link href="profile/orders" passHref>
+    <Link href="/profile/orders" passHref>
       <S.Link isActive={activeLink === '/profile/orders'} title="My orders">
         <FormatListBulleted size={24} />
         <span>My orders</span>

@@ -28,6 +28,7 @@ exports[`<CartList /> should render the cart list 1`] = `
   display: -ms-flexbox;
   display: flex;
   height: 100%;
+  width: 100%;
 }
 
 .c4 {
@@ -58,6 +59,7 @@ exports[`<CartList /> should render the cart list 1`] = `
   -ms-flex-align: flex-start;
   align-items: flex-start;
   height: 100%;
+  width: 100%;
 }
 
 .c7 {

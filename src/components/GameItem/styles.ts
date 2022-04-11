@@ -30,6 +30,7 @@ export const Remove = styled.div`
 export const GameContent = styled.div`
   display: flex;
   height: 100%;
+  width: 100%;
 `
 
 export const ImageBox = styled.div`
@@ -58,6 +59,7 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: flex-start;
   height: 100%;
+  width: 100%;
 `
 
 export const Title = styled.h3`

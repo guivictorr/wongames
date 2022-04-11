@@ -139,7 +139,7 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
             fullWidth
             disabled={!freeGames && (disabled || !!error)}
           >
-            loading ? <span>Loading</span> : Buy Now
+            {loading ? <span hidden>Loading</span> : 'Buy now'}
           </Button>
         </S.Footer>
       </form>

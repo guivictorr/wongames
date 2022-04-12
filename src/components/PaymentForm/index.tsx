@@ -1,18 +1,21 @@
+import { FormEvent, useEffect, useState } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { Session } from 'next-auth'
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js'
 import {
   PaymentIntent,
   StripeCardElement,
   StripeCardElementChangeEvent
 } from '@stripe/stripe-js'
+import { ErrorOutline, ShoppingCart } from 'styled-icons/material-outlined'
+
+import { useCart } from 'hooks/useCart'
+import { createPayment, createPaymentIntent } from 'utils/stripe/methods'
+
 import Button from 'components/Button'
 import { FormLoading } from 'components/Form'
 import Heading from 'components/Heading'
-import { useCart } from 'hooks/useCart'
-import { Session } from 'next-auth'
-import { useRouter } from 'next/router'
-import { FormEvent, useEffect, useState } from 'react'
-import { ErrorOutline, ShoppingCart } from 'styled-icons/material-outlined'
-import { createPayment, createPaymentIntent } from 'utils/stripe/methods'
 import * as S from './styles'
 
 type PaymentFormProps = {
@@ -131,9 +134,11 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
         </S.Body>
 
         <S.Footer>
-          <Button as="a" fullWidth minimal>
-            Continue shopping
-          </Button>
+          <Link href="/" passHref>
+            <Button as="a" fullWidth minimal>
+              Continue shopping
+            </Button>
+          </Link>
           <Button
             icon={loading ? <FormLoading /> : <ShoppingCart />}
             fullWidth

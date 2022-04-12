@@ -71,4 +71,17 @@ describe('<GameItem />', () => {
     userEvent.click(removeLink)
     expect(cartProviderProps.removeFromCart).toHaveBeenCalledWith(props.id)
   })
+
+  it('should render free game when theres no paymentInfo', () => {
+    const paymentInfo = {
+      flag: null,
+      img: null,
+      number: 'Free Game',
+      purchaseDate: 'Purchase made on 07/20/2020 at 20:32'
+    }
+
+    render(<GameItem {...props} paymentInfo={paymentInfo} />)
+
+    expect(screen.getByText(/free game/i)).toBeInTheDocument()
+  })
 })

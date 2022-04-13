@@ -4,6 +4,8 @@ import * as nextImage from 'next/image'
 Object.defineProperty(nextImage, 'default', {
   configurable: true,
   value: (value) => {
-    return <img {...value} />
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { objectFit, ...rest } = value
+    return <img {...rest} />
   }
 })

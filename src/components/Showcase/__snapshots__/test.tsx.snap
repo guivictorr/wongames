@@ -408,9 +408,6 @@ exports[`<Showcase /> should render correctly 1`] = `
 
 .c5 {
   position: relative;
-  background-image: url(/img/red-dead-img.jpg);
-  background-size: cover;
-  background-position: center center;
   height: 23rem;
   display: grid;
   grid-template-areas: 'floatimage content';
@@ -425,6 +422,11 @@ exports[`<Showcase /> should render correctly 1`] = `
   background-color: rgba(0,0,0,0.6);
 }
 
+.c5 img {
+  position: relative;
+  object-fit: cover;
+}
+
 .c5 .c7 {
   text-align: right;
 }
@@ -437,6 +439,11 @@ exports[`<Showcase /> should render correctly 1`] = `
   -webkit-align-self: end;
   -ms-flex-item-align: end;
   align-self: end;
+}
+
+.c6 img {
+  position: relative;
+  object-fit: contain;
 }
 
 .c8 {
@@ -558,9 +565,18 @@ exports[`<Showcase /> should render correctly 1`] = `
   >
     <img
       alt="Red dead redemption 2"
-      class="c6"
-      src="/img/red-dead-float.png"
+      layout="fill"
+      src="/img/red-dead-img.jpg"
     />
+    <div
+      class="c6"
+    >
+      <img
+        alt="Red dead redemption 2"
+        layout="fill"
+        src="/img/red-dead-float.png"
+      />
+    </div>
     <div
       class="c7 c8"
     >
@@ -620,7 +636,6 @@ exports[`<Showcase /> should render correctly 1`] = `
                     <img
                       alt="Population Zero"
                       layout="fill"
-                      objectfit="cover"
                       src="https://source.unsplash.com/user/willianjusten/300x140"
                     />
                   </a>

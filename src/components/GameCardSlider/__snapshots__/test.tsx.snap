@@ -440,7 +440,6 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
                   <img
                     alt="Population Zero"
                     layout="fill"
-                    objectfit="cover"
                     src="https://source.unsplash.com/user/willianjusten/300x140"
                   />
                 </a>
@@ -545,7 +544,6 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
                   <img
                     alt="Population Zero"
                     layout="fill"
-                    objectfit="cover"
                     src="https://source.unsplash.com/user/willianjusten/300x141"
                   />
                 </a>
@@ -650,7 +648,6 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
                   <img
                     alt="Population Zero"
                     layout="fill"
-                    objectfit="cover"
                     src="https://source.unsplash.com/user/willianjusten/300x142"
                   />
                 </a>
@@ -755,7 +752,6 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
                   <img
                     alt="Population Zero"
                     layout="fill"
-                    objectfit="cover"
                     src="https://source.unsplash.com/user/willianjusten/300x143"
                   />
                 </a>

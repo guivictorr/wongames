@@ -113,7 +113,6 @@ exports[`<Banner /> should render correctly 1`] = `
     <img
       alt="Defy death"
       layout="fill"
-      objectfit="cover"
       src="https://source.unsplash.com/user/willianjusten/1042x580"
     />
   </div>

@@ -1,4 +1,5 @@
 import Button from 'components/Button'
+import Image from 'next/image'
 import * as S from './styles'
 
 export type HighlightProps = {
@@ -17,10 +18,16 @@ const Highlight = ({
   buttonLabel,
   buttonLink,
   floatImage,
+  backgroundImage,
   ...props
 }: HighlightProps) => (
   <S.Wrapper {...props}>
-    {!!floatImage && <S.FloatImage src={floatImage} alt={title} />}
+    <Image src={backgroundImage} alt={title} layout="fill" />
+    {!!floatImage && (
+      <S.FloatImage>
+        <Image src={floatImage} alt={title} layout="fill" />
+      </S.FloatImage>
+    )}
     <S.Content>
       <S.Title>{title}</S.Title>
       <S.Subtitle>{subtitle}</S.Subtitle>

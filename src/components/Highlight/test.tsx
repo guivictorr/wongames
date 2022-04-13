@@ -28,21 +28,12 @@ describe('<Highlight />', () => {
     expect(container.firstChild).toMatchSnapshot()
   })
 
-  it('should render backgroundImage', () => {
-    const { container } = render(<Highlight {...props} />)
-
-    expect(container.firstChild).toHaveStyle({
-      backgroundImage: `url(${props.backgroundImage})`
-    })
-  })
-
   it('should render floatImage', () => {
     render(<Highlight {...props} floatImage="/float-image.jpg" />)
 
-    expect(screen.getByRole('img', { name: props.title })).toHaveAttribute(
-      'src',
-      '/float-image.jpg'
-    )
+    expect(
+      screen.getAllByRole('img', { name: props.title })[1]
+    ).toHaveAttribute('src', '/float-image.jpg')
   })
 
   it('should render align right by default', () => {

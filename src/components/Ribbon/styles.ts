@@ -46,6 +46,7 @@ export const Wrapper = styled.main<RibbonProps>`
     color: ${theme.colors.white};
     top: ${theme.spacings.xsmall};
     font-weight: ${theme.font.bold};
+    z-index: ${theme.layers.base}
 
     &::before {
       content: '';

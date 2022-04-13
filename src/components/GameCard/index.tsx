@@ -4,6 +4,7 @@ import * as S from './styles'
 import { formatNumber } from 'utils/format'
 import CartButton from 'components/CartButton'
 import WishlistButton from 'components/WishlistButton'
+import Image from 'next/image'
 
 export type GameCardProps = {
   id: string
@@ -38,7 +39,7 @@ const GameCard = ({
     )}
     <Link href={`/game/${slug}`} passHref>
       <S.ImageBox>
-        <S.Image src={img} alt={title} />
+        <Image layout="fill" objectFit="cover" src={img} alt={title} />
       </S.ImageBox>
     </Link>
     <S.Content>

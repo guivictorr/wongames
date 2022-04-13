@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Showcase /> should render correctly 1`] = `
-.c24 {
+.c23 {
   display: inline-block;
   vertical-align: middle;
   overflow: hidden;
@@ -22,22 +22,17 @@ exports[`<Showcase /> should render correctly 1`] = `
 }
 
 .c16 {
-  height: 14rem;
+  min-height: 14rem;
+  position: relative;
   width: 100%;
   background: #f6f7f8;
-  background-image: linear-gradient( to right,#f6f7f8 0%,#edeef1 20%,#f6f7f8 40%,#f6f7f8 100% );
+  background-image: linear-gradient( to right,#f6f7f8 0%,#edeef1 20%,s #f6f7f8 40%,#f6f7f8 100% );
   background-size: 80rem 14rem;
   -webkit-animation: placeholderShimmer 1s linear infinite forwards;
   animation: placeholderShimmer 1s linear infinite forwards;
 }
 
 .c17 {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -56,26 +51,26 @@ exports[`<Showcase /> should render correctly 1`] = `
   flex: 1;
 }
 
-.c19 {
+.c18 {
   -webkit-text-decoration: none;
   text-decoration: none;
   max-width: calc(100% - 2.5rem);
 }
 
-.c20 {
+.c19 {
   font-size: 1.6rem;
   line-height: 1.6rem;
   font-weight: 600;
   color: #030517;
 }
 
-.c21 {
+.c20 {
   font-size: 1.4rem;
   font-weight: 600;
   color: #8F8F8F;
 }
 
-.c22 {
+.c21 {
   color: #F231A5;
   position: absolute;
   right: -1rem;
@@ -83,11 +78,11 @@ exports[`<Showcase /> should render correctly 1`] = `
   cursor: pointer;
 }
 
-.c22 svg {
+.c21 svg {
   width: 2.5rem;
 }
 
-.c25 {
+.c24 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -103,7 +98,7 @@ exports[`<Showcase /> should render correctly 1`] = `
   margin-top: 0.8rem;
 }
 
-.c26 {
+.c25 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -120,7 +115,7 @@ exports[`<Showcase /> should render correctly 1`] = `
   margin-right: 1.6rem;
 }
 
-.c27 {
+.c26 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -168,7 +163,7 @@ exports[`<Showcase /> should render correctly 1`] = `
   background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
 }
 
-.c23 {
+.c22 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -195,23 +190,23 @@ exports[`<Showcase /> should render correctly 1`] = `
   color: #F231A5;
 }
 
-.c23:hover {
+.c22:hover {
   background: none;
 }
 
-.c23 svg {
+.c22 svg {
   width: 1.5rem;
 }
 
-.c23 svg + span {
+.c22 svg + span {
   margin-left: 0.8rem;
 }
 
-.c23:hover {
+.c22:hover {
   color: #e20e8d;
 }
 
-.c28 {
+.c27 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -236,15 +231,15 @@ exports[`<Showcase /> should render correctly 1`] = `
   font-size: 1.2rem;
 }
 
-.c28:hover {
+.c27:hover {
   background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
 }
 
-.c28 svg {
+.c27 svg {
   width: 1.5rem;
 }
 
-.c28 svg + span {
+.c27 svg + span {
   margin-left: 0.8rem;
 }
 
@@ -624,39 +619,40 @@ exports[`<Showcase /> should render correctly 1`] = `
                   >
                     <img
                       alt="Population Zero"
-                      class="c17"
+                      layout="fill"
+                      objectfit="cover"
                       src="https://source.unsplash.com/user/willianjusten/300x140"
                     />
                   </a>
                   <div
-                    class="c18"
+                    class="c17"
                   >
                     <a
-                      class="c19"
+                      class="c18"
                       href="/game/population-zero"
                     >
                       <h3
-                        class="c20"
+                        class="c19"
                       >
                         Population Zero
                       </h3>
                       <h4
-                        class="c21"
+                        class="c20"
                       >
                         Rockstar Games
                       </h4>
                     </a>
                     <div
-                      class="c22"
+                      class="c21"
                     >
                       <button
                         aria-label="Add to wishlist"
-                        class="c23"
+                        class="c22"
                         role="button"
                       >
                         <svg
                           aria-hidden="true"
-                          class="c24"
+                          class="c23"
                           fill="currentColor"
                           focusable="false"
                           viewBox="0 0 24 24"
@@ -673,25 +669,25 @@ exports[`<Showcase /> should render correctly 1`] = `
                       </button>
                     </div>
                     <div
-                      class="c25"
+                      class="c24"
                     >
                       <div
-                        class="c26"
+                        class="c25"
                       >
                         $235.00
                       </div>
                       <div
-                        class="c27"
+                        class="c26"
                       >
                         $215.00
                       </div>
                       <button
-                        class="c28"
+                        class="c27"
                       >
                         <svg
                           aria-hidden="true"
                           aria-label="Add to cart"
-                          class="c24"
+                          class="c23"
                           fill="currentColor"
                           focusable="false"
                           viewBox="0 0 24 24"

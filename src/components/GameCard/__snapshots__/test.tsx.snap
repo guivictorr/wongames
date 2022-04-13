@@ -16,22 +16,17 @@ exports[`<GameCard /> should render correctly 1`] = `
 }
 
 .c1 {
-  height: 14rem;
+  min-height: 14rem;
+  position: relative;
   width: 100%;
   background: #f6f7f8;
-  background-image: linear-gradient( to right,#f6f7f8 0%,#edeef1 20%,#f6f7f8 40%,#f6f7f8 100% );
+  background-image: linear-gradient( to right,#f6f7f8 0%,#edeef1 20%,s #f6f7f8 40%,#f6f7f8 100% );
   background-size: 80rem 14rem;
   -webkit-animation: placeholderShimmer 1s linear infinite forwards;
   animation: placeholderShimmer 1s linear infinite forwards;
 }
 
 .c2 {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -50,26 +45,26 @@ exports[`<GameCard /> should render correctly 1`] = `
   flex: 1;
 }
 
-.c4 {
+.c3 {
   -webkit-text-decoration: none;
   text-decoration: none;
   max-width: calc(100% - 2.5rem);
 }
 
-.c5 {
+.c4 {
   font-size: 1.6rem;
   line-height: 1.6rem;
   font-weight: 600;
   color: #030517;
 }
 
-.c6 {
+.c5 {
   font-size: 1.4rem;
   font-weight: 600;
   color: #8F8F8F;
 }
 
-.c7 {
+.c6 {
   color: #F231A5;
   position: absolute;
   right: -1rem;
@@ -77,11 +72,11 @@ exports[`<GameCard /> should render correctly 1`] = `
   cursor: pointer;
 }
 
-.c7 svg {
+.c6 svg {
   width: 2.5rem;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -97,7 +92,7 @@ exports[`<GameCard /> should render correctly 1`] = `
   margin-top: 0.8rem;
 }
 
-.c11 {
+.c10 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -115,7 +110,7 @@ exports[`<GameCard /> should render correctly 1`] = `
   margin-right: calc(0.8rem / 2);
 }
 
-.c8 {
+.c7 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -142,23 +137,23 @@ exports[`<GameCard /> should render correctly 1`] = `
   color: #F231A5;
 }
 
-.c8:hover {
+.c7:hover {
   background: none;
 }
 
-.c8 svg {
+.c7 svg {
   width: 1.5rem;
 }
 
-.c8 svg + span {
+.c7 svg + span {
   margin-left: 0.8rem;
 }
 
-.c8:hover {
+.c7:hover {
   color: #e20e8d;
 }
 
-.c12 {
+.c11 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -183,19 +178,19 @@ exports[`<GameCard /> should render correctly 1`] = `
   font-size: 1.2rem;
 }
 
-.c12:hover {
+.c11:hover {
   background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
 }
 
-.c12 svg {
+.c11 svg {
   width: 1.5rem;
 }
 
-.c12 svg + span {
+.c11 svg + span {
   margin-left: 0.8rem;
 }
 
-.c9 {
+.c8 {
   display: inline-block;
   vertical-align: middle;
   overflow: hidden;
@@ -210,39 +205,40 @@ exports[`<GameCard /> should render correctly 1`] = `
   >
     <img
       alt="Super Mario Odyssey"
-      class="c2"
+      layout="fill"
+      objectfit="cover"
       src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
     />
   </a>
   <div
-    class="c3"
+    class="c2"
   >
     <a
-      class="c4"
+      class="c3"
       href="/game/super-mario-odyssey"
     >
       <h3
-        class="c5"
+        class="c4"
       >
         Super Mario Odyssey
       </h3>
       <h4
-        class="c6"
+        class="c5"
       >
         Nintendo
       </h4>
     </a>
     <div
-      class="c7"
+      class="c6"
     >
       <button
         aria-label="Add to wishlist"
-        class="c8"
+        class="c7"
         role="button"
       >
         <svg
           aria-hidden="true"
-          class="c9"
+          class="c8"
           fill="currentColor"
           focusable="false"
           viewBox="0 0 24 24"
@@ -259,20 +255,20 @@ exports[`<GameCard /> should render correctly 1`] = `
       </button>
     </div>
     <div
-      class="c10"
+      class="c9"
     >
       <div
-        class="c11"
+        class="c10"
       >
         $50.00
       </div>
       <button
-        class="c12"
+        class="c11"
       >
         <svg
           aria-hidden="true"
           aria-label="Add to cart"
-          class="c9"
+          class="c8"
           fill="currentColor"
           focusable="false"
           viewBox="0 0 24 24"

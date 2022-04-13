@@ -34,7 +34,7 @@ describe('bannerMapper()', () => {
 
     expect(bannerMapper([banner])).toStrictEqual([
       {
-        img: 'http://localhost:1337/image.jpg',
+        img: `${process.env.NEXT_PUBLIC_IMAGE_HOST}/image.jpg`,
         title: 'Banner title',
         subtitle: 'Banner subtitle',
         buttonLabel: 'button label',
@@ -74,7 +74,7 @@ describe('gamesMapper()', () => {
         title: 'game',
         slug: 'game',
         developer: 'developer',
-        img: 'http://localhost:1337/image.jpg',
+        img: `${process.env.NEXT_PUBLIC_IMAGE_HOST}/image.jpg`,
         price: 10
       }
     ])
@@ -104,11 +104,11 @@ describe('highlightMapper()', () => {
     expect(highlightMapper(highlight)).toStrictEqual({
       title: 'title',
       subtitle: 'subtitle',
-      backgroundImage: 'http://localhost:1337/image.jpg',
+      backgroundImage: `${process.env.NEXT_PUBLIC_IMAGE_HOST}/image.jpg`,
       buttonLabel: 'button label',
       buttonLink: 'button link',
       alignment: 'right',
-      floatImage: 'http://localhost:1337/image.jpg'
+      floatImage: `${process.env.NEXT_PUBLIC_IMAGE_HOST}/image.jpg`
     })
   })
 })
@@ -131,7 +131,7 @@ describe('cartItemMapper()', () => {
     expect(cartMapper([game])).toStrictEqual([
       {
         id: '1',
-        img: 'http://localhost:1337/image.jpg',
+        img: `${process.env.NEXT_PUBLIC_IMAGE_HOST}/image.jpg`,
         price: '$10.00',
         title: 'game'
       }
@@ -186,7 +186,7 @@ describe('ordersMapper()', () => {
             title: 'game',
             downloadLink:
               'https://wongames.com/game/download/yuYT56Tgh431LkjhNBgdf',
-            img: 'http://localhost:1337/image.jpg',
+            img: `${process.env.NEXT_PUBLIC_IMAGE_HOST}/image.jpg`,
             price: '$10.00'
           }
         ]
@@ -235,7 +235,7 @@ describe('ordersMapper()', () => {
             title: 'game',
             downloadLink:
               'https://wongames.com/game/download/yuYT56Tgh431LkjhNBgdf',
-            img: 'http://localhost:1337/image.jpg',
+            img: `${process.env.NEXT_PUBLIC_IMAGE_HOST}/image.jpg`,
             price: '$0.00'
           }
         ]

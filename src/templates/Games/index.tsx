@@ -67,7 +67,7 @@ const Games = ({ filterItems }: GamesProps) => {
                   id={game.id}
                   key={game.slug}
                   developer={game.developers[0].name}
-                  img={`http://localhost:1337${game.cover?.url}`}
+                  img={`${process.env.NEXT_PUBLIC_IMAGE_HOST}${game.cover?.url}`}
                   price={game.price}
                   slug={game.slug}
                   title={game.name}

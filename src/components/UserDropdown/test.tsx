@@ -3,6 +3,15 @@ import userEvent from '@testing-library/user-event'
 
 import UserDropdown from '.'
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const useRouter = jest.spyOn(require('next/router'), 'useRouter')
+const push = jest.fn()
+
+useRouter.mockImplementation(() => ({
+  push,
+  query: {}
+}))
+
 describe('<UserDropdown />', () => {
   it('should render the username', () => {
     const { container } = render(<UserDropdown username="Jorge" />)

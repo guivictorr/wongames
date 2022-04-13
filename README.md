@@ -1,5 +1,3 @@
-<h1 align='center'>🚧 Under construction 🚧</h1>
-
 <h1 align='center'>Won games 🎮</h1>
 <p align='center'>Wongames is a project developed during a course called Advanced React which we learn a lot about front-end concepts like, accessibility, unit tests, integration tests, creation of good components, etc. In this repo you can view all the code developed during the course.  </p>
 
@@ -34,12 +32,14 @@ Frontend
 git clone https://github.com/guivictorr/wongames.git
 
 ## 2. Change to project folder
-cd nomedorepo
+cd wongames
 
 ## 3. Install dependencies
 yarn install
 
-## 4. Run the app
+## 4. Setup env variables
+
+## 5. Run the app
 yarn dev
 ```
 

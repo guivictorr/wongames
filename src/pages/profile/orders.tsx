@@ -21,6 +21,11 @@ function ProfileCards({ items }: OrdersListProps) {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await protectedRoutes(context)
+
+  if (!session) {
+    return { props: {} }
+  }
+
   const apolloClient = initializeApollo(null, session)
   const { data } = await apolloClient.query<QueryOrders, QueryOrdersVariables>({
     query: QUERY_ORDERS,

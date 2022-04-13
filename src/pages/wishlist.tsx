@@ -18,6 +18,11 @@ function WishlistPage(props: WishlistTemplateProps) {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await protectedRoutes(context)
+
+  if (!session) {
+    return { props: {} }
+  }
+
   const apolloClient = initializeApollo(null, session)
 
   if (!session)

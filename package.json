@@ -18,7 +18,8 @@
     "schema:download": "apollo client:download-schema --endpoint=http://localhost:1337/graphql schema.gql",
     "schema:convert": "node convertToNonNull.js",
     "types:generate": "yarn schema:download && yarn schema:convert && yarn codegen",
-    "codegen": "apollo codegen:generate --target typescript --excludes=node_modules/ --includes=src/graphql/**/*.ts --localSchemaFile schema.gql --tagName=gql --outputFlat src/graphql/generated"
+    "codegen": "apollo codegen:generate --target typescript --excludes=node_modules/ --includes=src/graphql/**/*.ts --localSchemaFile schema.gql --tagName=gql --outputFlat src/graphql/generated",
+    "cypress:open": "cypress open"
   },
   "lint-staged": {
     "src/**/*": [
@@ -30,6 +31,7 @@
     "@apollo/client": "^3.5.8",
     "@stripe/react-stripe-js": "^1.7.0",
     "@stripe/stripe-js": "^1.26.0",
+    "@testing-library/cypress": "^8.0.2",
     "@types/lodash.xor": "^4.5.6",
     "graphql": "^15.5.1",
     "joi": "^17.6.0",
@@ -66,6 +68,7 @@
     "apollo": "^2.33.9",
     "babel-loader": "^8.2.2",
     "babel-plugin-styled-components": "^1.13.2",
+    "cypress": "^9.5.4",
     "cz-conventional-changelog": "3.3.0",
     "dotenv": "^16.0.0",
     "eslint": "^8.0.0",

@@ -25,9 +25,10 @@ export const ImageWrapper = styled.div`
     height: 23rem;
     background-color: ${theme.colors.lightGray};
     position: relative;
+    z-index: -1;
     ${media.greaterThan('medium')`
       height: 58rem;
-    `}
+    `};
   `}
 `
 

@@ -40,6 +40,7 @@ exports[`<Banner /> should render correctly 1`] = `
   height: 23rem;
   background-color: #EAEAEA;
   position: relative;
+  z-index: -1;
 }
 
 .c3 {

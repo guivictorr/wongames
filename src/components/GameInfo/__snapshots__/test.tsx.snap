@@ -129,7 +129,7 @@ exports[`<GameInfo /> should render the heading, description and price 1`] = `
   right: -2rem;
 }
 
-z-index:10 .c2::before {
+.c3::before {
   content: '';
   position: absolute;
   right: 0;

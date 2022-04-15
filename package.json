@@ -19,7 +19,8 @@
     "schema:convert": "node convertToNonNull.js",
     "types:generate": "yarn schema:download && yarn schema:convert && yarn codegen",
     "codegen": "apollo codegen:generate --target typescript --excludes=node_modules/ --includes=src/graphql/**/*.ts --localSchemaFile schema.gql --tagName=gql --outputFlat src/graphql/generated",
-    "cypress:open": "cypress open"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
   },
   "lint-staged": {
     "src/**/*": [

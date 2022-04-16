@@ -1,6 +1,6 @@
-import { NextApiRequest, NextApiResponse } from 'next'
 import NextAuth, { Session, User } from 'next-auth'
 import { JWT } from 'next-auth/jwt'
+import { NextApiRequest, NextApiResponse } from 'next-auth/internals/utils'
 import Providers from 'next-auth/providers'
 
 type AuthorizeProps = {

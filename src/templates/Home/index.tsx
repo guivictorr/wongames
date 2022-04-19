@@ -33,7 +33,6 @@ const Home = ({
   freeHighlight,
   upcomingGames,
   upcomingHighlight,
-  upcomingMoreGames,
   freeGamesTitle,
   newGamesTitle,
   mostPopularGamesTitle,
@@ -61,12 +60,9 @@ const Home = ({
     />
     <S.SectionUpcoming>
       <Showcase
+        highlight={upcomingHighlight}
         heading={upcomingGamesTitle}
         gameCardSliderItems={upcomingGames}
-      />
-      <Showcase
-        highlight={upcomingHighlight}
-        gameCardSliderItems={upcomingMoreGames}
       />
     </S.SectionUpcoming>
 

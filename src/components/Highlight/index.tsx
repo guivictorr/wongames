@@ -21,7 +21,7 @@ const Highlight = ({
   backgroundImage,
   ...props
 }: HighlightProps) => (
-  <S.Wrapper {...props}>
+  <S.Wrapper {...props} data-cy="highlight">
     <Image src={backgroundImage} alt={title} layout="fill" />
     {!!floatImage && (
       <S.FloatImage>

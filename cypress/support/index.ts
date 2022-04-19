@@ -16,16 +16,21 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 
+type ShowcaseAttributes = {
+  name: string
+  highlight?: boolean
+}
+
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 declare global {
   namespace Cypress {
     interface Chainable {
       /**
-       * Custom command to select DOM element by data-cy attribute.
-       * @example cy.google()
+       * Custom command to check if showcase is rendered correctly
+       * @example cy.shouldRenderShowcase()
        */
-      google(): Chainable<AUTWindow>
+      shouldRenderShowcase(attr: ShowcaseAttributes): Chainable<Element>
     }
   }
 }

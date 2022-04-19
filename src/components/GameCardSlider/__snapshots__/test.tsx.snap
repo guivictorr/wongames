@@ -432,6 +432,7 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
             <div>
               <article
                 class="c3"
+                data-cy="game-card"
               >
                 <a
                   class="c4"
@@ -536,6 +537,7 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
             <div>
               <article
                 class="c3"
+                data-cy="game-card"
               >
                 <a
                   class="c4"
@@ -640,6 +642,7 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
             <div>
               <article
                 class="c3"
+                data-cy="game-card"
               >
                 <a
                   class="c4"
@@ -744,6 +747,7 @@ exports[`<GameCardSlider /> should render correctly 1`] = `
             <div>
               <article
                 class="c3"
+                data-cy="game-card"
               >
                 <a
                   class="c4"

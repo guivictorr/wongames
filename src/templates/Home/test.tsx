@@ -42,7 +42,7 @@ describe('<Home />', () => {
   it('should render correctly', () => {
     render(<Home {...props} />)
 
-    expect(screen.getAllByTestId('Showcase mock')).toHaveLength(5)
+    expect(screen.getAllByTestId('Showcase mock')).toHaveLength(4)
     expect(screen.getByTestId('Banner mock')).toBeInTheDocument()
   })
 })

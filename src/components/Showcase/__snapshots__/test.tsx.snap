@@ -554,6 +554,7 @@ exports[`<Showcase /> should render correctly 1`] = `
 
 <section
   class="c0 c1"
+  data-cy="Heading"
 >
   <h2
     class="c2 c3"
@@ -562,6 +563,7 @@ exports[`<Showcase /> should render correctly 1`] = `
   </h2>
   <section
     class="c4 c5"
+    data-cy="highlight"
   >
     <img
       alt="Red dead redemption 2"
@@ -628,6 +630,7 @@ exports[`<Showcase /> should render correctly 1`] = `
               <div>
                 <article
                   class="c15"
+                  data-cy="game-card"
                 >
                   <a
                     class="c16"

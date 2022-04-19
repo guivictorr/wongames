@@ -75,7 +75,7 @@ const Gallery = ({ items, ...rest }: GalleryProps) => {
   }, [])
 
   return (
-    <S.Wrapper {...rest}>
+    <S.Wrapper {...rest} data-cy="gallery">
       <Slider settings={settings} ref={modalSliderRef}>
         {items.map(({ label, src }, index) => (
           <S.Image

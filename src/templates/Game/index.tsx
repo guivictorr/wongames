@@ -45,7 +45,7 @@ const Game = ({
           {!!gallery && <Gallery items={gallery} />}
         </S.SectionGallery>
         <S.SectionTextContent>
-          <TextContent content={description} title={gameInfo.title} />
+          <TextContent content={description} title={gameInfo?.title || ''} />
         </S.SectionTextContent>
         <S.SectionGameDetails>
           <GameDetails {...details} />

@@ -50,13 +50,13 @@ const GameDetails = ({
               day: 'numeric',
               month: 'short',
               year: 'numeric'
-            }).format(new Date(releaseDate))}
+            }).format(new Date(releaseDate || Date.now()))}
           </S.Description>
         </S.Block>
         <S.Block>
           <S.Label>Platforms</S.Label>
           <S.IconsWrapper>
-            {platforms.map((platform) => (
+            {platforms?.map((platform) => (
               <S.Icon key={platform}>{platformIcons[platform]}</S.Icon>
             ))}
           </S.IconsWrapper>
@@ -68,12 +68,12 @@ const GameDetails = ({
         <S.Block>
           <S.Label>Rating</S.Label>
           <S.Description>
-            {rating === 'BR0' ? 'FREE' : `${rating.replace('BR', '')}+`}
+            {rating === 'BR0' ? 'FREE' : `${rating?.replace('BR', '')}+`}
           </S.Description>
         </S.Block>
         <S.Block>
           <S.Label>Genres</S.Label>
-          <S.Description>{genres.join(' / ')}</S.Description>
+          <S.Description>{genres?.join(' / ')}</S.Description>
         </S.Block>
       </S.Content>
     </S.Wrapper>
